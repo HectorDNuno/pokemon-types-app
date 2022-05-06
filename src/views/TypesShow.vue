@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      currentType: {},
+      currentType: [],
     };
   },
   created: function () {
@@ -19,23 +19,7 @@ export default {
 <template>
   <div class="types-show">
     <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
-  </div>
-
-  <div class="damage-from">
-    <p>double_damage_from:</p>
-    <li v-for="type in currentType.damage_relations.double_damage_from" :key="type.id">
-      {{ type.name }}
-    </li>
-
-    <p>half_damage_from:</p>
-    <li v-for="type in currentType.damage_relations.half_damage_from" :key="type.id">
-      {{ type.name }}
-    </li>
-
-    <p>no_damage_from:</p>
-    <li v-for="type in currentType.damage_relations.no_damage_from" :key="type.id">
-      {{ type.name }}
-    </li>
+    <a href="/">go to all types page</a>
   </div>
 
   <div class="damage-to">
@@ -55,15 +39,45 @@ export default {
     </li>
   </div>
 
-  <div class="pokemon-and-moves">
-    <p>Number of Pokémon with type:</p>
-    <ol>
-      <li v-for="pokemon in currentType.pokemon" :key="pokemon.id">{{ pokemon.pokemon.name }}</li>
-    </ol>
+  <div class="damage-from">
+    <p>double_damage_from:</p>
+    <li v-for="type in currentType.damage_relations.double_damage_from" :key="type.id">
+      {{ type.name }}
+    </li>
 
-    <p>Moves with type:</p>
-    <ol>
-      <li v-for="moves in currentType.moves" :key="moves.id">{{ moves.name }}</li>
-    </ol>
+    <p>half_damage_from:</p>
+    <li v-for="type in currentType.damage_relations.half_damage_from" :key="type.id">
+      {{ type.name }}
+    </li>
+
+    <p>no_damage_from:</p>
+    <li v-for="type in currentType.damage_relations.no_damage_from" :key="type.id">
+      {{ type.name }}
+    </li>
+  </div>
+
+  <div class="pokemon-and-moves">
+    <h2>Pokémon with type:</h2>
+
+    <p>
+      {{
+        Array.prototype.map
+          .call(this.currentType.pokemon, function (pokemon) {
+            return pokemon.pokemon.name;
+          })
+          .join(", ")
+      }}
+    </p>
+
+    <h2>Moves with type:</h2>
+    <p>
+      {{
+        Array.prototype.map
+          .call(this.currentType.moves, function (moves) {
+            return moves.name;
+          })
+          .join(", ")
+      }}
+    </p>
   </div>
 </template>
