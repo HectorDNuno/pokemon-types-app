@@ -1,8 +1,10 @@
 <template>
   <nav>
-    <router-link to="/">Types</router-link>
-    |
-    <router-link to="/about">About</router-link>
+    <div class="topnav">
+      <a class="active" href="/">Home</a>
+      <a href="/about">About</a>
+      <input type="text" placeholder="Search.." />
+    </div>
   </nav>
   <router-view />
 </template>
@@ -27,5 +29,43 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #2196f3;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type="text"] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
 }
 </style>
