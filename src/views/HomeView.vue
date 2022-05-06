@@ -15,19 +15,35 @@ export default {
     });
   },
   methods: {
-    // filterTypes: function () {
-    //   return this.types.filter((types) => {
-    //     var lowerName = types.name.toLowerCase();
-    //     var lowerNameFilter = this.nameFilter.toLowerCase();
-    //     return lowerName.includes(lowerNameFilter);
-    //   });
-    // },
+    filterTypes: function () {
+      return this.types.filter((types) => {
+        var lowerName = types.name.toLowerCase();
+        var lowerNameFilter = this.nameFilter.toLowerCase();
+        return lowerName.includes(lowerNameFilter);
+      });
+    },
   },
 };
 </script>
 
 <template>
   <div class="home">
+    <div>
+      <label for="searchBar">Search</label>
+      <input
+        class="form-control"
+        id="searchBar"
+        type="text"
+        v-model="nameFilter"
+        list="names"
+        placeholder="enter type name"
+      />
+
+      <datalist id="names">
+        <option v-for="type in filterTypes" :key="type.id">{{ type.name }}</option>
+      </datalist>
+    </div>
+
     <div v-for="type in types" :key="type.id">
       <h4>
         {{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}
@@ -50,5 +66,9 @@ img {
   border-radius: 4px;
   padding: 5px;
   width: 150px;
+}
+
+img:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 </style>
