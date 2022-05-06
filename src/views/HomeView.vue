@@ -28,7 +28,7 @@ export default {
 
 <template>
   <div class="home">
-    <div>
+    <!-- <div>
       <label for="searchBar">Search</label>
       <input
         class="form-control"
@@ -42,7 +42,7 @@ export default {
       <datalist id="names">
         <option v-for="type in filterTypes" :key="type.id">{{ type.name }}</option>
       </datalist>
-    </div>
+    </div> -->
 
     <div v-for="type in types" :key="type.id">
       <h4>
@@ -62,8 +62,6 @@ export default {
 
 <style>
 img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
   padding: 5px;
   width: 150px;
 }
