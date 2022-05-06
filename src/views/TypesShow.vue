@@ -55,14 +55,12 @@ export default {
     </li>
   </div>
 
-  <div>
+  <div class="pokemon-and-moves">
     <p>Number of Pokémon with type:</p>
     <ol>
       <li v-for="pokemon in currentType.pokemon" :key="pokemon.id">{{ pokemon.pokemon.name }}</li>
     </ol>
-  </div>
 
-  <div>
     <p>Moves with type:</p>
     <ol>
       <li v-for="moves in currentType.moves" :key="moves.id">{{ moves.name }}</li>
