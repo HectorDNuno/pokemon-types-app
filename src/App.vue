@@ -1,11 +1,5 @@
 <template>
-  <nav>
-    <div class="topnav">
-      <a class="active" href="/">Home</a>
-      <a href="/about">About</a>
-      <input type="text" placeholder="Search.." />
-    </div>
-  </nav>
+  <!-- <nav></nav> -->
   <router-view />
 </template>
 
