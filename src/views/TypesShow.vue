@@ -5,6 +5,7 @@ export default {
   data: function () {
     return {
       currentType: [],
+      typeInfo: [],
     };
   },
   created: function () {
@@ -12,6 +13,18 @@ export default {
       console.log("show type", response.data);
       this.currentType = response.data;
     });
+    axios.get("/types.json").then((response) => {
+      this.typeInfo = response.data;
+      console.log("all types", response.data);
+    });
+  },
+  methods: {
+    getType: function () {
+      axios.get("/types.json").then((response) => {
+        this.typeInfo = response.data;
+        console.log("all types", response.data);
+      });
+    },
   },
 };
 </script>
@@ -24,6 +37,7 @@ export default {
     </div>
 
     <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
+    <img :src="typeInfo[0].image_url" :alt="typeInfo.name" />
   </div>
 
   <div class="damage-to">
