@@ -18,8 +18,12 @@ export default {
 
 <template>
   <div class="types-show">
+    <div class="topnav">
+      <a class="active" href="/">all types</a>
+      <!-- <a href="/about">About</a> -->
+    </div>
+
     <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
-    <a href="/">go to all types page</a>
   </div>
 
   <div class="damage-to">
