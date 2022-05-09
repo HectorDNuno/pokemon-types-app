@@ -30,7 +30,6 @@ export default {
   <div class="home">
     <div class="topnav">
       <a class="active" href="/">Home</a>
-      <a href="/about">About</a>
       <input
         class="form-control"
         id="searchBar"
