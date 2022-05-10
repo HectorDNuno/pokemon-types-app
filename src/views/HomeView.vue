@@ -33,7 +33,7 @@ export default {
     </nav>
 
     <div class="container">
-      <h1 class="title">Find What You're Looking For</h1>
+      <h1 class="hero-title">Find What You're Looking For</h1>
       <form class="form-inline">
         <input
           class="form-control mr-sm-2"
