@@ -31,13 +31,12 @@ export default {
 
 <template>
   <div class="types-show">
-    <div class="topnav">
-      <a class="active" href="/">all types</a>
-      <!-- <a href="/about">About</a> -->
-    </div>
-
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand" href="/">Type Checkr</a>
+    </nav>
+    <div class="container"></div>
     <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
-    <img :src="typeInfo[0].image_url" :alt="typeInfo.name" />
+    <!-- <img :src="typeInfo[0].image_url" :alt="typeInfo.name" /> -->
   </div>
 
   <div class="damage-to">
@@ -99,3 +98,9 @@ export default {
     </p>
   </div>
 </template>
+
+<style>
+img {
+  width: 10rem;
+}
+</style>
