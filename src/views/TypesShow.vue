@@ -40,20 +40,45 @@ export default {
   </div>
 
   <div class="damage-to">
-    <p>double_damage_to:</p>
-    <li v-for="type in currentType.damage_relations.double_damage_to" :key="type.id">
-      {{ type.name }}
-    </li>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Double damage to</h5>
+            <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
+              {{ type.name }}
+            </p>
+          </div>
+        </div>
+      </div>
 
-    <p>half_damage_to:</p>
-    <li v-for="type in currentType.damage_relations.half_damage_to" :key="type.id">
-      {{ type.name }}
-    </li>
+      <p>double_damage_to:</p>
+      <li v-for="type in currentType.damage_relations.double_damage_to" :key="type.id">
+        {{ type.name }}
+      </li>
 
-    <p>no_damage_to:</p>
-    <li v-for="type in currentType.damage_relations.no_damage_to" :key="type.id">
-      {{ type.name }}
-    </li>
+      <p>half_damage_to:</p>
+      <li v-for="type in currentType.damage_relations.half_damage_to" :key="type.id">
+        {{ type.name }}
+      </li>
+
+      <p>no_damage_to:</p>
+      <li v-for="type in currentType.damage_relations.no_damage_to" :key="type.id">
+        {{ type.name }}
+      </li>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Double damage to</h5>
+            <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
+              {{ type.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="damage-from">
