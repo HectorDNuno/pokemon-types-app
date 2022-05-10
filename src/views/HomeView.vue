@@ -48,9 +48,7 @@ export default {
           <option v-for="type in types" :key="type.id">{{ type.name }}</option>
         </datalist>
       </form>
-    </div>
 
-    <div class="container">
       <div class="row">
         <div v-for="type in filterTypes()" :key="type.id" class="col-12 col-md-4">
           <div class="card mt-4" style="width: 20rem">
@@ -88,5 +86,10 @@ img:hover {
 
 .form-inline {
   padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.hero-title {
+  padding-top: 15px;
 }
 </style>
