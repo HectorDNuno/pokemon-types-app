@@ -5,17 +5,21 @@ export default {
   data: function () {
     return {
       currentType: [],
-      typeInfo: [],
+      typeImage: "",
     };
   },
   created: function () {
     axios.get("/types/" + this.$route.params.name).then((response) => {
       console.log("show type", response.data);
       this.currentType = response.data;
-    });
-    axios.get("/types.json").then((response) => {
-      this.typeInfo = response.data;
-      console.log("all types", response.data);
+      axios.get("/types.json").then((type) => {
+        console.log("all types", type.data);
+        type.data.forEach((type) => {
+          if (this.currentType.name === type.name) {
+            this.typeImage = type.image_url;
+          }
+        });
+      });
     });
   },
   methods: {
@@ -35,7 +39,7 @@ export default {
       <a class="navbar-brand" href="/">Type Checkr</a>
     </nav>
     <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
-    <!-- <img :src="typeInfo[0].image_url" :alt="typeInfo.name" /> -->
+    <img :src="typeImage" :alt="typeImage" />
   </div>
 
   <div class="container">
