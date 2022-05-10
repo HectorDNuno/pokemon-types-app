@@ -31,7 +31,9 @@ export default {
     <nav class="navbar navbar-light bg-light justify-content-between">
       <a class="navbar-brand" href="/">Type Checkr</a>
     </nav>
+
     <div class="container">
+      <h1 class="title">Find What You're Looking For</h1>
       <form class="form-inline">
         <input
           class="form-control mr-sm-2"
@@ -49,23 +51,21 @@ export default {
     </div>
 
     <div class="container">
-      <div v-for="type in filterTypes()" :key="type.id">
-        <div class="row">
-          <div class="col-sm-6">
-            <div class="card" style="width: 20rem">
-              <a :href="`/types/show/${type.name}`">
-                <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem" />
-              </a>
-              <div class="card-body">
-                <h5 class="card-title">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h5>
-                <p class="card-text">
-                  Weaknesses: {{ type.damage_relations_overview.weaknesses }} Super-effective:
-                  {{ type.damage_relations_overview.strengths }} Neutral damage from:
-                  {{ type.damage_relations_overview.neutral }} Number of moves: {{ type.moves_with_type }} Pokemon with
-                  type: {{ type.pokemon_with_type }}
-                </p>
-                <a :href="`/types/show/${type.name}`" class="btn btn-primary">details</a>
-              </div>
+      <div class="row">
+        <div v-for="type in filterTypes()" :key="type.id" class="col-12 col-md-4">
+          <div class="card mt-4" style="width: 20rem">
+            <a :href="`/types/show/${type.name}`">
+              <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem" />
+            </a>
+            <div class="card-body">
+              <h5 class="card-title">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h5>
+              <p class="card-text">
+                Weaknesses: {{ type.damage_relations_overview.weaknesses }} Super-effective:
+                {{ type.damage_relations_overview.strengths }} Neutral damage from:
+                {{ type.damage_relations_overview.neutral }} Number of moves: {{ type.moves_with_type }} Pokemon with
+                type: {{ type.pokemon_with_type }}
+              </p>
+              <a :href="`/types/show/${type.name}`" class="btn btn-primary">details</a>
             </div>
           </div>
         </div>
@@ -83,5 +83,9 @@ img:hover {
 
 .form-inline {
   padding-bottom: 20px;
+}
+
+.card {
+  /* margin-bottom: 20px; */
 }
 </style>
