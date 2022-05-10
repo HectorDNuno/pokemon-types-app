@@ -49,18 +49,11 @@ export default {
         </datalist>
       </form>
 
-      <div class="row">
+      <div class="row justify-content-between">
         <div v-for="type in filterTypes()" :key="type.id" class="col-12 col-md-4">
-          <a :href="`/types/show/${type.name}`">
-            <div class="card mt-4" style="width: 20rem; height: 20rem">
-              <a :href="`/types/show/${type.name}`">
-                <img
-                  class="card-img-top"
-                  :src="type.image_url"
-                  :alt="type.name"
-                  style="width: 5rem; padding-top: 1rem"
-                />
-              </a>
+          <div class="card mt-4">
+            <a :href="`/types/show/${type.name}`">
+              <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem; padding-top: 1rem" />
               <div class="card-body">
                 <h5 class="card-title">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h5>
                 <p class="card-text">
@@ -75,8 +68,8 @@ export default {
                   Pokemon with type: {{ type.pokemon_with_type }}
                 </p>
               </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -100,9 +93,7 @@ img:hover {
 }
 
 .container {
-  margin: auto;
-  width: 60%;
-  padding: 10px;
+  padding-bottom: 15px;
 }
 
 a:link {
