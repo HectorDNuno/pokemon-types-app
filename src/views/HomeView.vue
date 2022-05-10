@@ -33,44 +33,50 @@ export default {
     </nav>
 
     <div class="container">
-      <h1 class="hero-title">Find What You're Looking For</h1>
+      <h1 class="hero-title">Checkr</h1>
       <form class="form-inline">
         <input
           class="form-control mr-sm-2"
           type="search"
-          placeholder="enter type name"
+          placeholder="Search for types"
           aria-label="Search"
           v-model="nameFilter"
           list="names"
         />
 
-        <datalist id="names">
-          <option v-for="type in types" :key="type.id">{{ type.name }}</option>
+        <datalist id="names" v-for="type in types" :key="type.id">
+          <p>{{ type.name }}</p>
         </datalist>
       </form>
 
       <div class="row">
         <div v-for="type in filterTypes()" :key="type.id" class="col-12 col-md-4">
-          <div class="card mt-4" style="width: 20rem">
-            <a :href="`/types/show/${type.name}`">
-              <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem; padding-top: 1rem" />
-            </a>
-            <div class="card-body">
-              <h5 class="card-title">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h5>
-              <p class="card-text">
-                Weaknesses: {{ type.damage_relations_overview.weaknesses }}
-                <br />
-                Super-effective: {{ type.damage_relations_overview.strengths }}
-                <br />
-                Neutral damage from: {{ type.damage_relations_overview.neutral }}
-                <br />
-                Number of moves: {{ type.moves_with_type }}
-                <br />
-                Pokemon with type: {{ type.pokemon_with_type }}
-              </p>
-              <a :href="`/types/show/${type.name}`" class="btn btn-info">details</a>
+          <a :href="`/types/show/${type.name}`">
+            <div class="card mt-4" style="width: 20rem; height: 20rem">
+              <a :href="`/types/show/${type.name}`">
+                <img
+                  class="card-img-top"
+                  :src="type.image_url"
+                  :alt="type.name"
+                  style="width: 5rem; padding-top: 1rem"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h5>
+                <p class="card-text">
+                  Weaknesses: {{ type.damage_relations_overview.weaknesses }}
+                  <br />
+                  Super-effective: {{ type.damage_relations_overview.strengths }}
+                  <br />
+                  Neutral damage from: {{ type.damage_relations_overview.neutral }}
+                  <br />
+                  Number of moves: {{ type.moves_with_type }}
+                  <br />
+                  Pokemon with type: {{ type.pokemon_with_type }}
+                </p>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -91,5 +97,31 @@ img:hover {
 
 .hero-title {
   padding-top: 15px;
+}
+
+.container {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
+a:active {
+  color: black;
+  text-decoration: none;
 }
 </style>
