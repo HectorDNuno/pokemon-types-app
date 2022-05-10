@@ -28,48 +28,60 @@ export default {
 
 <template>
   <div class="home">
-    <div class="topnav">
-      <a class="active" href="/">Home</a>
-      <input
-        class="form-control"
-        id="searchBar"
-        type="text"
-        v-model="nameFilter"
-        list="names"
-        placeholder="enter type name"
-      />
-      <datalist id="names">
-        <option v-for="type in types" :key="type.id">{{ type.name }}</option>
-      </datalist>
+    <nav class="navbar navbar-light bg-light justify-content-between">
+      <a class="navbar-brand" href="/">Type Checkr</a>
+    </nav>
+    <div class="container">
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="enter type name"
+          aria-label="Search"
+          v-model="nameFilter"
+          list="names"
+        />
+
+        <datalist id="names">
+          <option v-for="type in types" :key="type.id">{{ type.name }}</option>
+        </datalist>
+      </form>
     </div>
 
-    <div>
+    <div class="container">
       <div v-for="type in filterTypes()" :key="type.id">
-        <h4>
-          {{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}
-        </h4>
-        <a :href="`/types/show/${type.name}`">
-          <img :src="type.image_url" :alt="type.name" />
-        </a>
-        <p>Weaknesses: {{ type.damage_relations_overview.weaknesses }}</p>
-        <p>Super-effective: {{ type.damage_relations_overview.strengths }}</p>
-        <p>Neutral damage from: {{ type.damage_relations_overview.neutral }}</p>
-        <p>Number of moves: {{ type.moves_with_type }}</p>
-        <p>Pokemon with type: {{ type.pokemon_with_type }}</p>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card" style="width: 20rem">
+              <a :href="`/types/show/${type.name}`">
+                <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem" />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h5>
+                <p class="card-text">
+                  Weaknesses: {{ type.damage_relations_overview.weaknesses }} Super-effective:
+                  {{ type.damage_relations_overview.strengths }} Neutral damage from:
+                  {{ type.damage_relations_overview.neutral }} Number of moves: {{ type.moves_with_type }} Pokemon with
+                  type: {{ type.pokemon_with_type }}
+                </p>
+                <a :href="`/types/show/${type.name}`" class="btn btn-primary">details</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style>
-img {
-  padding: 5px;
-  width: 150px;
-}
-
 img:hover {
   filter: saturate(200%);
   transform: scale(1.1);
   cursor: pointer;
+}
+
+.form-inline {
+  padding-bottom: 20px;
 }
 </style>
