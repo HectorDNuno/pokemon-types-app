@@ -29,8 +29,8 @@ export default {
 
 <template>
   <div class="types-show">
-    <div class="container">
-      <table class="table table-borderless">
+    <div class="container img-navbar">
+      <table>
         <tbody>
           <tr>
             <th scope="row"></th>
@@ -296,8 +296,18 @@ export default {
 </template>
 
 <style>
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border: 0px;
+}
+
+div.container.img-navbar {
+  padding-top: 30px;
+}
+
 img {
-  width: 2rem;
+  width: 32px;
 }
 
 img.main-image {
@@ -306,10 +316,5 @@ img.main-image {
 
 .card-group {
   display: flex;
-}
-
-td {
-  padding: 0px !important;
-  margin: 0px !important;
 }
 </style>
