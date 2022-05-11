@@ -1,5 +1,10 @@
 <template>
-  <!-- <nav></nav> -->
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand" href="/">
+      <span class="brand1">Type</span>
+      <span class="brand2">Checkr</span>
+    </a>
+  </nav>
   <router-view />
 </template>
 
@@ -61,5 +66,10 @@ nav a.router-link-exact-active {
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
+}
+span.brand2 {
+  font-family: "Bungee Shade", cursive;
+  padding-left: 5px;
+  color: red;
 }
 </style>
