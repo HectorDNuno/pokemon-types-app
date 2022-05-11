@@ -39,7 +39,7 @@ export default {
           <tr>
             <th scope="row"></th>
             <td>
-              <a href="/">
+              <a href="/types/show/bug">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Pok%C3%A9mon_Bug_Type_Icon.svg"
                   alt="bug"
@@ -47,7 +47,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/dark">
                 <img
                   class="nav-img"
                   src="https://upload.wikimedia.org/wikipedia/commons/0/09/Pok%C3%A9mon_Dark_Type_Icon.svg"
@@ -56,7 +56,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/dragon">
                 <img
                   class="nav-img"
                   src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Pok%C3%A9mon_Dragon_Type_Icon.svg"
@@ -65,7 +65,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/electric">
                 <img
                   class="nav-img"
                   src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Pok%C3%A9mon_Electric_Type_Icon.svg"
@@ -74,7 +74,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/fairy">
                 <img
                   class="nav-img"
                   src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pok%C3%A9mon_Fairy_Type_Icon.svg"
@@ -83,7 +83,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/fighting">
                 <img
                   class="nav-img"
                   src="https://upload.wikimedia.org/wikipedia/commons/b/be/Pok%C3%A9mon_Fighting_Type_Icon.svg"
@@ -92,7 +92,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/fire">
                 <img
                   class="nav-img"
                   src="https://upload.wikimedia.org/wikipedia/commons/5/56/Pok%C3%A9mon_Fire_Type_Icon.svg"
@@ -101,7 +101,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/flying">
                 <img
                   class="nav-img"
                   src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Pok%C3%A9mon_Flying_Type_Icon.svg"
@@ -110,7 +110,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/ghost">
                 <img
                   class="nav-img"
                   src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Pok%C3%A9mon_Ghost_Type_Icon.svg"
@@ -122,7 +122,7 @@ export default {
           <tr>
             <th scope="row"></th>
             <td>
-              <a href="/">
+              <a href="/types/show/grass">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Pok%C3%A9mon_Grass_Type_Icon.svg"
                   alt="grass"
@@ -130,7 +130,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/ground">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/8/8d/Pok%C3%A9mon_Ground_Type_Icon.svg"
                   alt="ground"
@@ -138,7 +138,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/ice">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/8/88/Pok%C3%A9mon_Ice_Type_Icon.svg"
                   alt="ice"
@@ -146,7 +146,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/normal">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Pok%C3%A9mon_Normal_Type_Icon.svg"
                   alt="normal"
@@ -154,7 +154,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/poison">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Pok%C3%A9mon_Poison_Type_Icon.svg"
                   alt="poison"
@@ -162,7 +162,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/psychic">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Pok%C3%A9mon_Psychic_Type_Icon.svg"
                   alt="psychic"
@@ -170,7 +170,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/rock">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Pok%C3%A9mon_Rock_Type_Icon.svg"
                   alt="rock"
@@ -178,7 +178,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/steel">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/3/38/Pok%C3%A9mon_Steel_Type_Icon.svg"
                   alt="steel"
@@ -186,7 +186,7 @@ export default {
               </a>
             </td>
             <td>
-              <a href="/">
+              <a href="/types/show/water">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Pok%C3%A9mon_Water_Type_Icon.svg"
                   alt="water"
