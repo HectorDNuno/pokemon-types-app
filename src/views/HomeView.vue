@@ -29,7 +29,10 @@ export default {
 <template>
   <div class="home">
     <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand" href="/">Type Checkr</a>
+      <a class="navbar-brand" href="/">
+        <span class="brand1">Type</span>
+        <span class="brand2">Checkr</span>
+      </a>
     </nav>
 
     <div class="container">
@@ -77,6 +80,20 @@ export default {
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+
+h1.hero-title {
+  font-family: "Bungee Shade", cursive;
+  color: red;
+  font-size: 60px;
+}
+
+span.brand2 {
+  font-family: "Bungee Shade", cursive;
+  padding-left: 5px;
+  color: red;
+}
+
 img:hover {
   filter: saturate(200%);
   transform: scale(1.1);
