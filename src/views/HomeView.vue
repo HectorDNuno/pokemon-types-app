@@ -28,13 +28,6 @@ export default {
 
 <template>
   <div class="home">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand" href="/">
-        <span class="brand1">Type</span>
-        <span class="brand2">Checkr</span>
-      </a>
-    </nav>
-
     <div class="container">
       <h1 class="hero-title">Checkr</h1>
       <form class="form-inline">
@@ -86,12 +79,6 @@ h1.hero-title {
   font-family: "Bungee Shade", cursive;
   color: red;
   font-size: 60px;
-}
-
-span.brand2 {
-  font-family: "Bungee Shade", cursive;
-  padding-left: 5px;
-  color: red;
 }
 
 img:hover {
