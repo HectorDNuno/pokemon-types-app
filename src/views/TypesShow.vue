@@ -212,6 +212,7 @@ export default {
             <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
               {{ type.name }}
             </p>
+            <p v-if="!this.currentType.damage_relations.double_damage_to.length">None</p>
           </div>
         </div>
 
@@ -221,6 +222,7 @@ export default {
             <p v-for="type in currentType.damage_relations.half_damage_to" :key="type.id" class="card-text">
               {{ type.name }}
             </p>
+            <p v-if="!this.currentType.damage_relations.half_damage_to.length">None</p>
           </div>
         </div>
 
@@ -230,6 +232,7 @@ export default {
             <p v-for="type in currentType.damage_relations.no_damage_to" :key="type.id" class="card-text">
               {{ type.name }}
             </p>
+            <p v-if="!this.currentType.damage_relations.no_damage_to.length">None</p>
           </div>
         </div>
       </div>
@@ -243,6 +246,7 @@ export default {
             <p v-for="type in currentType.damage_relations.double_damage_from" :key="type.id" class="card-text">
               {{ type.name }}
             </p>
+            <p v-if="!this.currentType.damage_relations.double_damage_from.length">None</p>
           </div>
         </div>
 
@@ -252,6 +256,7 @@ export default {
             <p v-for="type in currentType.damage_relations.half_damage_from" :key="type.id" class="card-text">
               {{ type.name }}
             </p>
+            <p v-if="!this.currentType.damage_relations.half_damage_from.length">None</p>
           </div>
         </div>
 
@@ -261,6 +266,7 @@ export default {
             <p v-for="type in currentType.damage_relations.no_damage_from" :key="type.id" class="card-text">
               {{ type.name }}
             </p>
+            <p v-if="!this.currentType.damage_relations.no_damage_from.length">None</p>
           </div>
         </div>
       </div>
