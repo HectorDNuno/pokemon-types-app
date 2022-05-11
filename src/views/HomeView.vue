@@ -77,7 +77,7 @@ export default {
 
 h1.hero-title {
   font-family: "Bungee Shade", cursive;
-  color: red;
+  color: white;
   font-size: 60px;
 }
 
@@ -118,5 +118,9 @@ a:hover {
 a:active {
   color: black;
   text-decoration: none;
+}
+
+div.home {
+  background-color: #c52836;
 }
 </style>
