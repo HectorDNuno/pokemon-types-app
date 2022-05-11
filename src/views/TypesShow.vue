@@ -29,10 +29,6 @@ export default {
 
 <template>
   <div class="types-show">
-    <nav class="navbar navbar-light bg-light justify-content-between">
-      <a class="navbar-brand" href="/">Type Checkr</a>
-    </nav>
-
     <div class="container">
       <table class="table table-borderless">
         <tbody>
@@ -206,7 +202,7 @@ export default {
     <div class="damage-to">
       <span class="section-title"><h2>Damage to</h2></span>
       <div class="card-group">
-        <div class="card mt-4">
+        <div class="card mt-4 bg-light">
           <div class="card-body">
             <h5 class="card-title">Double</h5>
             <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
@@ -216,7 +212,7 @@ export default {
           </div>
         </div>
 
-        <div class="card mt-4">
+        <div class="card mt-4 bg-light">
           <div class="card-body">
             <h5 class="card-title">Half</h5>
             <p v-for="type in currentType.damage_relations.half_damage_to" :key="type.id" class="card-text">
@@ -226,7 +222,7 @@ export default {
           </div>
         </div>
 
-        <div class="card mt-4">
+        <div class="card mt-4 bg-light">
           <div class="card-body">
             <h5 class="card-title">No effect</h5>
             <p v-for="type in currentType.damage_relations.no_damage_to" :key="type.id" class="card-text">
@@ -240,7 +236,7 @@ export default {
     <div class="damage-from">
       <span class="section-title"><h2>Damage from</h2></span>
       <div class="card-group">
-        <div class="card mt-4">
+        <div class="card mt-4 bg-light">
           <div class="card-body">
             <h5 class="card-title">Double</h5>
             <p v-for="type in currentType.damage_relations.double_damage_from" :key="type.id" class="card-text">
@@ -250,7 +246,7 @@ export default {
           </div>
         </div>
 
-        <div class="card mt-4">
+        <div class="card mt-4 bg-light">
           <div class="card-body">
             <h5 class="card-title">Half</h5>
             <p v-for="type in currentType.damage_relations.half_damage_from" :key="type.id" class="card-text">
@@ -260,7 +256,7 @@ export default {
           </div>
         </div>
 
-        <div class="card mt-4">
+        <div class="card mt-4 bg-light">
           <div class="card-body">
             <h5 class="card-title">No effect</h5>
             <p v-for="type in currentType.damage_relations.no_damage_from" :key="type.id" class="card-text">
