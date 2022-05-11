@@ -196,101 +196,101 @@ export default {
 
     <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
     <img class="main-image" :src="typeImage" :alt="typeImage" />
-  </div>
 
-  <div class="container">
-    <div class="damage-to">
-      <span class="section-title"><h2>Damage to</h2></span>
-      <div class="card-group">
-        <div class="card mt-4 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">Double</h5>
-            <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
-              {{ type.name }}
-            </p>
-            <p v-if="!this.currentType.damage_relations.double_damage_to.length">None</p>
+    <div class="container">
+      <div class="damage-to">
+        <span class="section-title"><h2>Damage to</h2></span>
+        <div class="card-group">
+          <div class="card mt-4 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Double</h5>
+              <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
+                {{ type.name }}
+              </p>
+              <p v-if="!this.currentType.damage_relations.double_damage_to.length">None</p>
+            </div>
           </div>
-        </div>
 
-        <div class="card mt-4 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">Half</h5>
-            <p v-for="type in currentType.damage_relations.half_damage_to" :key="type.id" class="card-text">
-              {{ type.name }}
-            </p>
-            <p v-if="!this.currentType.damage_relations.half_damage_to.length">None</p>
+          <div class="card mt-4 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Half</h5>
+              <p v-for="type in currentType.damage_relations.half_damage_to" :key="type.id" class="card-text">
+                {{ type.name }}
+              </p>
+              <p v-if="!this.currentType.damage_relations.half_damage_to.length">None</p>
+            </div>
           </div>
-        </div>
 
-        <div class="card mt-4 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">No effect</h5>
-            <p v-for="type in currentType.damage_relations.no_damage_to" :key="type.id" class="card-text">
-              {{ type.name }}
-            </p>
-            <p v-if="!this.currentType.damage_relations.no_damage_to.length">None</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="damage-from">
-      <span class="section-title"><h2>Damage from</h2></span>
-      <div class="card-group">
-        <div class="card mt-4 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">Double</h5>
-            <p v-for="type in currentType.damage_relations.double_damage_from" :key="type.id" class="card-text">
-              {{ type.name }}
-            </p>
-            <p v-if="!this.currentType.damage_relations.double_damage_from.length">None</p>
-          </div>
-        </div>
-
-        <div class="card mt-4 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">Half</h5>
-            <p v-for="type in currentType.damage_relations.half_damage_from" :key="type.id" class="card-text">
-              {{ type.name }}
-            </p>
-            <p v-if="!this.currentType.damage_relations.half_damage_from.length">None</p>
-          </div>
-        </div>
-
-        <div class="card mt-4 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">No effect</h5>
-            <p v-for="type in currentType.damage_relations.no_damage_from" :key="type.id" class="card-text">
-              {{ type.name }}
-            </p>
-            <p v-if="!this.currentType.damage_relations.no_damage_from.length">None</p>
+          <div class="card mt-4 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">No effect</h5>
+              <p v-for="type in currentType.damage_relations.no_damage_to" :key="type.id" class="card-text">
+                {{ type.name }}
+              </p>
+              <p v-if="!this.currentType.damage_relations.no_damage_to.length">None</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <div class="damage-from">
+        <span class="section-title"><h2>Damage from</h2></span>
+        <div class="card-group">
+          <div class="card mt-4 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Double</h5>
+              <p v-for="type in currentType.damage_relations.double_damage_from" :key="type.id" class="card-text">
+                {{ type.name }}
+              </p>
+              <p v-if="!this.currentType.damage_relations.double_damage_from.length">None</p>
+            </div>
+          </div>
 
-    <div class="pokemon-and-moves">
-      <h2>Pokémon with type:</h2>
+          <div class="card mt-4 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Half</h5>
+              <p v-for="type in currentType.damage_relations.half_damage_from" :key="type.id" class="card-text">
+                {{ type.name }}
+              </p>
+              <p v-if="!this.currentType.damage_relations.half_damage_from.length">None</p>
+            </div>
+          </div>
 
-      <p>
-        {{
-          Array.prototype.map
-            .call(this.currentType.pokemon, function (pokemon) {
-              return pokemon.pokemon.name;
-            })
-            .join(", ")
-        }}
-      </p>
+          <div class="card mt-4 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">No effect</h5>
+              <p v-for="type in currentType.damage_relations.no_damage_from" :key="type.id" class="card-text">
+                {{ type.name }}
+              </p>
+              <p v-if="!this.currentType.damage_relations.no_damage_from.length">None</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <h2>Moves with type:</h2>
-      <p>
-        {{
-          Array.prototype.map
-            .call(this.currentType.moves, function (moves) {
-              return moves.name;
-            })
-            .join(", ")
-        }}
-      </p>
+      <div class="pokemon-and-moves">
+        <h2>Pokémon with type:</h2>
+
+        <p>
+          {{
+            Array.prototype.map
+              .call(this.currentType.pokemon, function (pokemon) {
+                return pokemon.pokemon.name;
+              })
+              .join(", ")
+          }}
+        </p>
+
+        <h2>Moves with type:</h2>
+        <p>
+          {{
+            Array.prototype.map
+              .call(this.currentType.moves, function (moves) {
+                return moves.name;
+              })
+              .join(", ")
+          }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -316,5 +316,9 @@ img.main-image {
 
 .card-group {
   display: flex;
+}
+
+div.types-show {
+  background-color: #c52836;
 }
 </style>
