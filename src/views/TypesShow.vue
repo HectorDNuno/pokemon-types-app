@@ -1,5 +1,6 @@
 <script>
 import axios from "axios";
+// import pokemonsprites from "pokemonsprites";
 
 export default {
   data: function () {
@@ -7,6 +8,7 @@ export default {
       currentType: [],
       typeImage: "",
       allTypes: [],
+      pokemonWithType: [],
     };
   },
   created: function () {
@@ -23,6 +25,25 @@ export default {
         });
       });
     });
+  },
+  methods: {
+    setPokemonNames: function () {
+      this.currentType.pokemon.forEach((pokemon) => {
+        this.pokemonWithType.push(pokemon.pokemon.url);
+      });
+    },
+    getPokemonImages: function () {
+      this.pokemonWithType.forEach((url) => {
+        axios.get(url).then((response) => {
+          console.log(response.data);
+        });
+      });
+    },
+  },
+  watch: {
+    currentType() {
+      this.setPokemonNames();
+    },
   },
 };
 </script>
@@ -196,6 +217,9 @@ export default {
 
     <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
     <img class="main-image" :src="typeImage" :alt="typeImage" />
+
+    <button v-on:click="getPokemonImages()">click</button>
+    <p>{{ pokemonWithType }}</p>
 
     <div class="container">
       <div class="damage-to">
