@@ -37,9 +37,9 @@ export default {
         axios.get(url).then((response) => {
           let pokemonResponse = response.data;
           this.imageUrls.push(pokemonResponse.sprites.front_default);
-          console.log("image url", this.imageUrls);
         });
       });
+      console.log("image url", this.imageUrls);
     },
   },
 
@@ -221,12 +221,12 @@ export default {
       </table>
     </div>
 
-    <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
+    <h1 class="title">{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
     <img class="main-image" :src="typeImage" :alt="typeImage" />
 
     <div class="container">
       <div class="damage-to">
-        <span class="section-title"><h2>Damage to</h2></span>
+        <h2 class="section-title">Damage to</h2>
         <div class="card-group">
           <div class="card mt-4 bg-light">
             <div class="card-body">
@@ -260,7 +260,7 @@ export default {
         </div>
       </div>
       <div class="damage-from">
-        <span class="section-title"><h2>Damage from</h2></span>
+        <h2 class="section-title">Damage from</h2>
         <div class="card-group">
           <div class="card mt-4 bg-light">
             <div class="card-body">
@@ -295,27 +295,41 @@ export default {
       </div>
 
       <div class="pokemon-and-moves">
-        <div class="card" style="">
-          <div class="card-body">
-            <h2 class="card-title">Pokémon with type:</h2>
-            <p class="card-text">
-              <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" alt="image of a pokemon" />
-            </p>
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="card mt-4">
+              <div class="card-body">
+                <h2 class="card-title">Pokémon with type:</h2>
+                <p class="card-text">
+                  <img
+                    v-for="image in imageUrls"
+                    :key="image"
+                    class="poke-image"
+                    :src="image"
+                    alt="image of a pokemon"
+                  />
+                </p>
+                <p class="card-text">
+                  <small class="text-muted">{{ pokemonUrls.length }} pokemon in total</small>
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <h2 class="card-title">Moves with type:</h2>
-            <p class="card-text">
-              {{
-                Array.prototype.map
-                  .call(this.currentType.moves, function (moves) {
-                    return moves.name;
-                  })
-                  .join(", ")
-              }}
-            </p>
+          <div class="col-lg-6 mb-4">
+            <div class="card mt-4">
+              <div class="card-body">
+                <h2 class="card-title">Moves with type:</h2>
+                <p class="card-text">
+                  {{
+                    Array.prototype.map
+                      .call(this.currentType.moves, function (moves) {
+                        return moves.name;
+                      })
+                      .join(", ")
+                  }}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -334,13 +348,13 @@ div.container.img-navbar {
   padding-top: 30px;
 }
 
-img.poke-image {
-  width: 50px;
-  height: 50px;
-}
-
 img {
   width: 32px;
+}
+
+img.poke-image {
+  width: 70px;
+  height: 70px;
 }
 
 img.main-image {
@@ -353,5 +367,13 @@ img.main-image {
 
 div.types-show {
   background-color: #c52836;
+}
+
+h2.section-title {
+  color: white;
+}
+
+h1 {
+  color: white;
 }
 </style>
