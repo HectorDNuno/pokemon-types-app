@@ -232,8 +232,10 @@ export default {
         </table>
       </div>
 
-      <h1 class="title">{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
-      <img class="main-image" :src="typeImage" :alt="typeImage" />
+      <div>
+        <img class="type-image" :src="typeImage" :alt="typeImage" />
+        <h1 class="type-name">{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
+      </div>
 
       <div class="row">
         <div class="col-lg-6 mb-4">
@@ -357,7 +359,7 @@ img.poke-image {
   height: 70px;
 }
 
-img.main-image {
+img.type-image {
   width: 10rem;
 }
 
@@ -382,7 +384,7 @@ img.nav-img:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
-img.main-image:hover {
+img.type-image:hover {
   filter: saturate(200%);
   transform: scale(1.1);
 }
