@@ -81,7 +81,7 @@ h1.hero-title {
   font-size: 60px;
 }
 
-img:hover {
+img.card-img-top:hover {
   filter: saturate(200%);
   transform: scale(1.1);
   cursor: pointer;
