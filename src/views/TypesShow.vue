@@ -1,6 +1,5 @@
 <script>
 import axios from "axios";
-// import pokemonsprites from "pokemonsprites";
 
 export default {
   data: function () {
@@ -8,7 +7,8 @@ export default {
       currentType: [],
       typeImage: "",
       allTypes: [],
-      pokemonWithType: [],
+      pokemonUrls: [],
+      imageUrls: [],
     };
   },
   created: function () {
@@ -17,7 +17,7 @@ export default {
       this.currentType = response.data;
       axios.get("/types.json").then((type) => {
         this.allTypes = type.data;
-        console.log("types", type.data);
+        console.log("all types", type.data);
         type.data.forEach((type) => {
           if (this.currentType.name === type.name) {
             this.typeImage = type.image_url;
@@ -29,16 +29,22 @@ export default {
   methods: {
     setPokemonNames: function () {
       this.currentType.pokemon.forEach((pokemon) => {
-        this.pokemonWithType.push(pokemon.pokemon.url);
+        this.pokemonUrls.push(pokemon.pokemon.url);
       });
     },
     getPokemonImages: function () {
-      this.pokemonWithType.forEach((url) => {
+      this.pokemonUrls.forEach((url) => {
         axios.get(url).then((response) => {
-          console.log(response.data);
+          let pokemonResponse = response.data;
+          this.imageUrls.push(pokemonResponse.sprites.front_default);
+          console.log("image url", this.imageUrls);
         });
       });
     },
+  },
+
+  mounted: function () {
+    this.getPokemonImages();
   },
   watch: {
     currentType() {
@@ -218,9 +224,6 @@ export default {
     <h1>{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
     <img class="main-image" :src="typeImage" :alt="typeImage" />
 
-    <button v-on:click="getPokemonImages()">click</button>
-    <p>{{ pokemonWithType }}</p>
-
     <div class="container">
       <div class="damage-to">
         <span class="section-title"><h2>Damage to</h2></span>
@@ -292,28 +295,29 @@ export default {
       </div>
 
       <div class="pokemon-and-moves">
-        <h2>Pokémon with type:</h2>
+        <div class="card" style="">
+          <div class="card-body">
+            <h2 class="card-title">Pokémon with type:</h2>
+            <p class="card-text">
+              <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" alt="image of a pokemon" />
+            </p>
+          </div>
+        </div>
 
-        <p>
-          {{
-            Array.prototype.map
-              .call(this.currentType.pokemon, function (pokemon) {
-                return pokemon.pokemon.name;
-              })
-              .join(", ")
-          }}
-        </p>
-
-        <h2>Moves with type:</h2>
-        <p>
-          {{
-            Array.prototype.map
-              .call(this.currentType.moves, function (moves) {
-                return moves.name;
-              })
-              .join(", ")
-          }}
-        </p>
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Moves with type:</h2>
+            <p class="card-text">
+              {{
+                Array.prototype.map
+                  .call(this.currentType.moves, function (moves) {
+                    return moves.name;
+                  })
+                  .join(", ")
+              }}
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -328,6 +332,11 @@ table {
 
 div.container.img-navbar {
   padding-top: 30px;
+}
+
+img.poke-image {
+  width: 50px;
+  height: 50px;
 }
 
 img {
