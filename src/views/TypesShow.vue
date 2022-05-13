@@ -238,7 +238,7 @@ export default {
       </div>
 
       <div class="row">
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-6 mb-4 damage-to">
           <h2 class="section-title">Damage to</h2>
           <div class="card-group">
             <div class="card mt-4 bg-light">
@@ -270,7 +270,7 @@ export default {
             </div>
           </div>
         </div>
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-6 mb-4 damage-from">
           <h2 class="section-title">Damage from</h2>
           <div class="card-group">
             <div class="card mt-4 bg-light">
@@ -302,10 +302,7 @@ export default {
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="row pokemon-and-moves">
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-6 mb-4 pokemon-with-type">
           <div class="card mt-4">
             <div class="card-body">
               <h2 class="card-title">Pokémon with type:</h2>
@@ -318,7 +315,7 @@ export default {
             </div>
           </div>
         </div>
-        <div class="col-lg-6 mb-4">
+        <div class="col-lg-6 mb-4 moves-with-type">
           <div class="card mt-4">
             <div class="card-body">
               <h2 class="card-title">Moves with type:</h2>
@@ -355,8 +352,8 @@ img {
 }
 
 img.poke-image {
-  width: 70px;
-  height: 70px;
+  width: auto;
+  height: auto;
 }
 
 img.type-image {
