@@ -119,8 +119,4 @@ a:active {
   color: black;
   text-decoration: none;
 }
-
-div.home {
-  background-color: #c52836;
-}
 </style>

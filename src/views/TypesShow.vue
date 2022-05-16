@@ -239,9 +239,9 @@ export default {
 
       <div class="row">
         <div class="col-lg-6 mb-4 pokemon-with-type">
-          <div class="card mt-4">
+          <div class="card">
+            <h2 class="card-header-custom">Pokémon with type:</h2>
             <div class="card-body">
-              <h2 class="card-title">Pokémon with type:</h2>
               <p class="card-text">
                 <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" alt="image of a pokemon" />
               </p>
@@ -252,9 +252,11 @@ export default {
           </div>
         </div>
         <div class="col-lg-6 mb-4 damage-and-moves">
-          <div class="card-header-custom">Damage from</div>
-          <div class="card-group">
-            <div class="card mt-4 bg-light">
+          <div class="card-header-custom">
+            <h2>Damage from</h2>
+          </div>
+          <div class="card-group" style="padding-bottom: 2rem">
+            <div class="card mt-0 bg-light">
               <div class="card-body">
                 <h5 class="card-title">Double</h5>
                 <p v-for="type in currentType.damage_relations.double_damage_from" :key="type.id" class="card-text">
@@ -263,7 +265,7 @@ export default {
                 <p v-if="!this.currentType.damage_relations.double_damage_from.length">None</p>
               </div>
             </div>
-            <div class="card mt-4 bg-light">
+            <div class="card mt-0 bg-light">
               <div class="card-body">
                 <h5 class="card-title">Half</h5>
                 <p v-for="type in currentType.damage_relations.half_damage_from" :key="type.id" class="card-text">
@@ -272,7 +274,7 @@ export default {
                 <p v-if="!this.currentType.damage_relations.half_damage_from.length">None</p>
               </div>
             </div>
-            <div class="card mt-4 bg-light">
+            <div class="card mt-0 bg-light">
               <div class="card-body">
                 <h5 class="card-title">No effect</h5>
                 <p v-for="type in currentType.damage_relations.no_damage_from" :key="type.id" class="card-text">
@@ -282,9 +284,11 @@ export default {
               </div>
             </div>
           </div>
-          <div class="card-header-custom">Damage to</div>
+          <div class="card-header-custom">
+            <h2>Damage to</h2>
+          </div>
           <div class="card-group">
-            <div class="card mt-4 bg-light">
+            <div class="card mt-0">
               <div class="card-body">
                 <h5 class="card-title">Double</h5>
                 <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
@@ -293,7 +297,7 @@ export default {
                 <p v-if="!this.currentType.damage_relations.double_damage_to.length">None</p>
               </div>
             </div>
-            <div class="card mt-4 bg-light">
+            <div class="card mt-0">
               <div class="card-body">
                 <h5 class="card-title">Half</h5>
                 <p v-for="type in currentType.damage_relations.half_damage_to" :key="type.id" class="card-text">
@@ -302,7 +306,7 @@ export default {
                 <p v-if="!this.currentType.damage_relations.half_damage_to.length">None</p>
               </div>
             </div>
-            <div class="card mt-4 bg-light">
+            <div class="card mt-0">
               <div class="card-body">
                 <h5 class="card-title">No effect</h5>
                 <p v-for="type in currentType.damage_relations.no_damage_to" :key="type.id" class="card-text">
@@ -313,8 +317,8 @@ export default {
             </div>
           </div>
           <div class="card mt-4 moves">
+            <h2 class="card-header-custom">Moves with type:</h2>
             <div class="card-body">
-              <h2 class="card-title">Moves with type:</h2>
               <p class="card-text">
                 {{
                   Array.prototype.map
@@ -367,10 +371,6 @@ img.type-image:hover {
   transform: scale(1.1);
 }
 
-.types-show {
-  background-color: #c52836;
-}
-
 .card-header-custom {
   border-radius: 0.25rem 0.25rem 0 0;
   padding: 0.75rem 1.25rem;
@@ -383,10 +383,6 @@ img.type-image:hover {
   border-top-right-radius: 0;
 }
 
-h1 {
-  color: white;
-}
-
 .title > img,
 .title > h1 {
   display: inline-block;
@@ -396,5 +392,6 @@ h1 {
 
 .title > h1 {
   padding-left: 2rem;
+  color: white;
 }
 </style>
