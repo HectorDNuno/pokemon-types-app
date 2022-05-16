@@ -232,46 +232,27 @@ export default {
         </table>
       </div>
 
-      <div>
+      <div class="title">
         <img class="type-image" :src="typeImage" :alt="typeImage" />
         <h1 class="type-name">{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
       </div>
 
       <div class="row">
-        <div class="col-lg-6 mb-4 damage-to">
-          <h2 class="section-title">Damage to</h2>
-          <div class="card-group">
-            <div class="card mt-4 bg-light">
-              <div class="card-body">
-                <h5 class="card-title">Double</h5>
-                <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
-                  {{ type.name }}
-                </p>
-                <p v-if="!this.currentType.damage_relations.double_damage_to.length">None</p>
-              </div>
-            </div>
-            <div class="card mt-4 bg-light">
-              <div class="card-body">
-                <h5 class="card-title">Half</h5>
-                <p v-for="type in currentType.damage_relations.half_damage_to" :key="type.id" class="card-text">
-                  {{ type.name }}
-                </p>
-                <p v-if="!this.currentType.damage_relations.half_damage_to.length">None</p>
-              </div>
-            </div>
-            <div class="card mt-4 bg-light">
-              <div class="card-body">
-                <h5 class="card-title">No effect</h5>
-                <p v-for="type in currentType.damage_relations.no_damage_to" :key="type.id" class="card-text">
-                  {{ type.name }}
-                </p>
-                <p v-if="!this.currentType.damage_relations.no_damage_to.length">None</p>
-              </div>
+        <div class="col-lg-6 mb-4 pokemon-with-type">
+          <div class="card mt-4">
+            <div class="card-body">
+              <h2 class="card-title">Pokémon with type:</h2>
+              <p class="card-text">
+                <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" alt="image of a pokemon" />
+              </p>
+              <p class="card-text">
+                <small class="text-muted">{{ pokemonUrls.length }} pokemon in total</small>
+              </p>
             </div>
           </div>
         </div>
-        <div class="col-lg-6 mb-4 damage-from">
-          <h2 class="section-title">Damage from</h2>
+        <div class="col-lg-6 mb-4 damage-and-moves">
+          <div class="card-header-custom">Damage from</div>
           <div class="card-group">
             <div class="card mt-4 bg-light">
               <div class="card-body">
@@ -301,22 +282,37 @@ export default {
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 mb-4 pokemon-with-type">
-          <div class="card mt-4">
-            <div class="card-body">
-              <h2 class="card-title">Pokémon with type:</h2>
-              <p class="card-text">
-                <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" alt="image of a pokemon" />
-              </p>
-              <p class="card-text">
-                <small class="text-muted">{{ pokemonUrls.length }} pokemon in total</small>
-              </p>
+          <div class="card-header-custom">Damage to</div>
+          <div class="card-group">
+            <div class="card mt-4 bg-light">
+              <div class="card-body">
+                <h5 class="card-title">Double</h5>
+                <p v-for="type in currentType.damage_relations.double_damage_to" :key="type.id" class="card-text">
+                  {{ type.name }}
+                </p>
+                <p v-if="!this.currentType.damage_relations.double_damage_to.length">None</p>
+              </div>
+            </div>
+            <div class="card mt-4 bg-light">
+              <div class="card-body">
+                <h5 class="card-title">Half</h5>
+                <p v-for="type in currentType.damage_relations.half_damage_to" :key="type.id" class="card-text">
+                  {{ type.name }}
+                </p>
+                <p v-if="!this.currentType.damage_relations.half_damage_to.length">None</p>
+              </div>
+            </div>
+            <div class="card mt-4 bg-light">
+              <div class="card-body">
+                <h5 class="card-title">No effect</h5>
+                <p v-for="type in currentType.damage_relations.no_damage_to" :key="type.id" class="card-text">
+                  {{ type.name }}
+                </p>
+                <p v-if="!this.currentType.damage_relations.no_damage_to.length">None</p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6 mb-4 moves-with-type">
-          <div class="card mt-4">
+          <div class="card mt-4 moves">
             <div class="card-body">
               <h2 class="card-title">Moves with type:</h2>
               <p class="card-text">
@@ -341,14 +337,18 @@ table {
   margin-left: auto;
   margin-right: auto;
   border: 0px;
+  width: 30rem;
 }
 
-div.container.img-navbar {
-  padding-top: 30px;
+.img-navbar {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-img {
-  width: 32px;
+img.nav-img:hover {
+  filter: saturate(200%);
+  transform: scale(1.5);
+  cursor: pointer;
 }
 
 img.poke-image {
@@ -358,31 +358,43 @@ img.poke-image {
 
 img.type-image {
   width: 10rem;
+  padding-top: auto;
+  padding-bottom: 3rem;
 }
 
-.card-group {
-  display: flex;
+img.type-image:hover {
+  filter: saturate(200%);
+  transform: scale(1.1);
 }
 
-div.types-show {
+.types-show {
   background-color: #c52836;
 }
 
-h2.section-title {
-  color: white;
+.card-header-custom {
+  border-radius: 0.25rem 0.25rem 0 0;
+  padding: 0.75rem 1.25rem;
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+}
+.card-header-custom + .card-group > .card {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 h1 {
   color: white;
 }
 
-img.nav-img:hover {
-  filter: saturate(200%);
-  transform: scale(1.1);
-  cursor: pointer;
+.title > img,
+.title > h1 {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
 }
-img.type-image:hover {
-  filter: saturate(200%);
-  transform: scale(1.1);
+
+.title > h1 {
+  padding-left: 2rem;
 }
 </style>
