@@ -243,7 +243,7 @@ export default {
             <h2 class="card-header-custom border-bottom">Pokémon with type:</h2>
             <div class="card-body">
               <p class="card-text">
-                <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" alt="image of a pokemon" />
+                <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" />
               </p>
               <p class="card-text">
                 <small class="text-muted">{{ pokemonUrls.length }} pokemon in total</small>
