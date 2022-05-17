@@ -240,7 +240,7 @@ export default {
       <div class="row">
         <div class="col-lg-6 mb-4 pokemon-with-type">
           <div class="card">
-            <h2 class="card-header-custom">Pokémon with type:</h2>
+            <h2 class="card-header-custom border-bottom">Pokémon with type:</h2>
             <div class="card-body">
               <p class="card-text">
                 <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" alt="image of a pokemon" />
@@ -287,7 +287,7 @@ export default {
           <div class="card-header-custom">
             <h2>Damage to</h2>
           </div>
-          <div class="card-group">
+          <div class="card-group" style="padding-bottom: 2rem">
             <div class="card mt-0">
               <div class="card-body">
                 <h5 class="card-title">Double</h5>
@@ -316,8 +316,8 @@ export default {
               </div>
             </div>
           </div>
-          <div class="card mt-4 moves">
-            <h2 class="card-header-custom">Moves with type:</h2>
+          <div class="card moves">
+            <h2 class="card-header-custom border-bottom">Moves with type:</h2>
             <div class="card-body">
               <p class="card-text">
                 {{
