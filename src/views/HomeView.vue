@@ -46,7 +46,7 @@ export default {
       </form>
 
       <div class="row justify-content-between">
-        <div v-for="type in filterTypes()" :key="type.id" class="col-12 col-sm-3">
+        <div v-for="type in filterTypes()" :key="type.id" class="col-12 col-sm-4">
           <div class="card mt-4">
             <a :href="`/types/show/${type.name}`">
               <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem; padding-top: 1rem" />
@@ -97,7 +97,7 @@ img.card-img-top:hover {
 }
 
 .container {
-  padding-bottom: 15px;
+  padding-bottom: 5rem;
 }
 
 a:link {
