@@ -73,14 +73,12 @@ export default {
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
-
 .card-title.home {
   font-family: "Press Start 2P";
 }
 
 .hero-title {
-  font-family: "Bungee Shade", cursive;
+  font-family: "Press Start 2P", cursive;
   color: white;
   font-size: 60px;
   padding-top: 15px;
@@ -94,6 +92,10 @@ img.card-img-top:hover {
 
 .card {
   width: 90%;
+}
+
+p {
+  font-family: "Bungee";
 }
 
 .form-inline {
