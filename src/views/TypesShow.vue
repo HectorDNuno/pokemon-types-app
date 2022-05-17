@@ -240,7 +240,7 @@ export default {
       <div class="row">
         <div class="col-lg-6 mb-4 pokemon-with-type">
           <div class="card">
-            <h4 class="card-header-custom border-bottom">Pokémon with type</h4>
+            <h2 class="card-header-custom border-bottom">Pokémon with type</h2>
             <div class="card-body">
               <p class="card-text">
                 <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" />
@@ -253,7 +253,7 @@ export default {
         </div>
         <div class="col-lg-6 mb-4 damage-and-moves">
           <div class="card-header-custom">
-            <h4>Damage from</h4>
+            <h2>Damage from</h2>
           </div>
           <div class="card-group">
             <div class="card mt-0">
@@ -262,7 +262,7 @@ export default {
                 <p v-for="type in currentType.damage_relations.double_damage_from" :key="type.id" class="card-text">
                   {{ type.name }}
                 </p>
-                <p v-if="!this.currentType.damage_relations.double_damage_from.length">None</p>
+                <p class="none" v-if="!this.currentType.damage_relations.double_damage_from.length">None</p>
               </div>
             </div>
             <div class="card mt-0">
@@ -285,7 +285,7 @@ export default {
             </div>
           </div>
           <div class="card-header-custom">
-            <h4>Damage to</h4>
+            <h2>Damage to</h2>
           </div>
           <div class="card-group">
             <div class="card mt-0">
@@ -318,7 +318,7 @@ export default {
           </div>
           <div class="card mt-0 moves">
             <div class="card-header">
-              <h4>Moves with type</h4>
+              <h2>Moves with type</h2>
             </div>
             <div class="card-body moves">
               <p class="card-text">
@@ -419,7 +419,7 @@ img.type-image:hover {
 }
 
 .card-header {
-  font-family: "Press Start 2P";
+  font-family: "Bungee";
 }
 
 .card-header-custom {
@@ -428,7 +428,7 @@ img.type-image:hover {
   background-color: #f5f5f5;
   border: 1px solid #e5e5e5;
   border-bottom: none;
-  font-family: "Press Start 2P";
+  font-family: "Bungee";
 }
 
 .card-header-custom + .card-group > .card {
