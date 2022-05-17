@@ -240,7 +240,7 @@ export default {
       <div class="row">
         <div class="col-lg-6 mb-4 pokemon-with-type">
           <div class="card">
-            <h2 class="card-header-custom border-bottom">Pokémon with type:</h2>
+            <h2 class="card-header-custom border-bottom">Pokémon with type</h2>
             <div class="card-body">
               <p class="card-text">
                 <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" />
@@ -418,12 +418,17 @@ img.type-image:hover {
   transform: scale(1.1);
 }
 
+.card-header {
+  font-family: "Press Start 2P";
+}
+
 .card-header-custom {
   border-radius: 0.25rem 0.25rem 0 0;
   padding: 0.75rem 1.25rem;
   background-color: #f5f5f5;
   border: 1px solid #e5e5e5;
   border-bottom: none;
+  font-family: "Press Start 2P";
 }
 .card-header-custom + .card-group > .card {
   border-top-left-radius: 0;
@@ -440,5 +445,6 @@ img.type-image:hover {
 .title > h1 {
   padding-left: 2rem;
   color: white;
+  font-family: "Press Start 2P";
 }
 </style>

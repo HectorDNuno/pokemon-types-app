@@ -79,4 +79,6 @@ span.brand2 {
 .navbar {
   background-color: #e3313f;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 </style>
