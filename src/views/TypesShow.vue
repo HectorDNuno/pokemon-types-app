@@ -255,8 +255,8 @@ export default {
           <div class="card-header-custom">
             <h2>Damage from</h2>
           </div>
-          <div class="card-group" style="padding-bottom: 2rem">
-            <div class="card mt-0 bg-light">
+          <div class="card-group">
+            <div class="card mt-0">
               <div class="card-body">
                 <h5 class="card-title">Double</h5>
                 <p v-for="type in currentType.damage_relations.double_damage_from" :key="type.id" class="card-text">
@@ -265,7 +265,7 @@ export default {
                 <p v-if="!this.currentType.damage_relations.double_damage_from.length">None</p>
               </div>
             </div>
-            <div class="card mt-0 bg-light">
+            <div class="card mt-0">
               <div class="card-body">
                 <h5 class="card-title">Half</h5>
                 <p v-for="type in currentType.damage_relations.half_damage_from" :key="type.id" class="card-text">
@@ -274,7 +274,7 @@ export default {
                 <p v-if="!this.currentType.damage_relations.half_damage_from.length">None</p>
               </div>
             </div>
-            <div class="card mt-0 bg-light">
+            <div class="card mt-0">
               <div class="card-body">
                 <h5 class="card-title">No effect</h5>
                 <p v-for="type in currentType.damage_relations.no_damage_from" :key="type.id" class="card-text">
@@ -287,7 +287,7 @@ export default {
           <div class="card-header-custom">
             <h2>Damage to</h2>
           </div>
-          <div class="card-group" style="padding-bottom: 2rem">
+          <div class="card-group">
             <div class="card mt-0">
               <div class="card-body">
                 <h5 class="card-title">Double</h5>
@@ -316,9 +316,11 @@ export default {
               </div>
             </div>
           </div>
-          <div class="card moves">
-            <h2 class="card-header-custom border-bottom">Moves with type:</h2>
-            <div class="card-body">
+          <div class="card-header-custom">
+            <h2>Moves with type</h2>
+          </div>
+          <div class="card mt-0 moves">
+            <div class="card-body moves">
               <p class="card-text">
                 {{
                   Array.prototype.map
@@ -337,6 +339,10 @@ export default {
 </template>
 
 <style>
+.card-group {
+  padding-bottom: 2rem;
+}
+
 table {
   margin-left: auto;
   margin-right: auto;
@@ -360,6 +366,47 @@ img.poke-image {
   height: auto;
 }
 
+img.poke-image:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
 img.type-image {
   width: 10rem;
   padding-top: auto;
@@ -379,6 +426,11 @@ img.type-image:hover {
   border-bottom: none;
 }
 .card-header-custom + .card-group > .card {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.card.moves {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
