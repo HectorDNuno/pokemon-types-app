@@ -75,10 +75,11 @@ export default {
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 
-h1.hero-title {
+.hero-title {
   font-family: "Bungee Shade", cursive;
   color: white;
   font-size: 60px;
+  padding-top: 15px;
 }
 
 img.card-img-top:hover {
@@ -90,10 +91,6 @@ img.card-img-top:hover {
 .form-inline {
   padding-bottom: 20px;
   padding-top: 20px;
-}
-
-.hero-title {
-  padding-top: 15px;
 }
 
 .container {
