@@ -51,7 +51,7 @@ export default {
             <a :href="`/types/show/${type.name}`">
               <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem; padding-top: 1rem" />
               <div class="card-body">
-                <h5 class="card-title home">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h5>
+                <h6 class="card-title home">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h6>
                 <p class="card-text">
                   Weaknesses: {{ type.damage_relations_overview.weaknesses }}
                   <br />
