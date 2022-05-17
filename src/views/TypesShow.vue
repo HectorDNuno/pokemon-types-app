@@ -316,10 +316,10 @@ export default {
               </div>
             </div>
           </div>
-          <div class="card-header-custom">
-            <h2>Moves with type</h2>
-          </div>
           <div class="card mt-0 moves">
+            <div class="card-header">
+              <h2>Moves with type</h2>
+            </div>
             <div class="card-body moves">
               <p class="card-text">
                 {{
@@ -426,11 +426,6 @@ img.type-image:hover {
   border-bottom: none;
 }
 .card-header-custom + .card-group > .card {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-.card.moves {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
