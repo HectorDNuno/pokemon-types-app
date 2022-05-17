@@ -330,6 +330,9 @@ export default {
                     .join(", ")
                 }}
               </p>
+              <p class="card-text">
+                <small class="text-muted">{{ currentType.moves.length }} moves in total</small>
+              </p>
             </div>
           </div>
         </div>
