@@ -9,6 +9,8 @@ export default {
       allTypes: [],
       pokemonUrls: [],
       imageUrls: [],
+      moveUrls: [],
+      moveData: [],
     };
   },
   created: function () {
@@ -27,7 +29,7 @@ export default {
     });
   },
   methods: {
-    setPokemonNames: function () {
+    getPokemonUrls: function () {
       this.currentType.pokemon.forEach((pokemon) => {
         this.pokemonUrls.push(pokemon.pokemon.url);
       });
@@ -41,14 +43,32 @@ export default {
       });
       console.log("image url", this.imageUrls);
     },
+    getMoveUrls: function () {
+      this.currentType.moves.forEach((move) => {
+        this.moveUrls.push(move.url);
+      });
+    },
+    getMoveData: function () {
+      this.moveUrls.forEach((url) => {
+        axios.get(url).then((response) => {
+          let moveResponse = response.data;
+          let obj = {};
+          obj[moveResponse.damage_class.name] = moveResponse.name;
+          this.moveData.push(obj);
+        });
+      });
+      console.log("move data", this.moveData);
+    },
   },
 
   mounted: function () {
     this.getPokemonImages();
+    this.getMoveData();
   },
   watch: {
     currentType() {
-      this.setPokemonNames();
+      this.getPokemonUrls();
+      this.getMoveUrls();
     },
   },
 };
@@ -316,24 +336,31 @@ export default {
               </div>
             </div>
           </div>
-          <div class="card mt-0 moves">
-            <div class="card-header">
-              <h2>Moves with type</h2>
+          <div class="card-header-custom">
+            <h2>Moves with type</h2>
+          </div>
+          <div class="card-group pb-0">
+            <div class="card moves mt-0">
+              <div class="card-body">
+                <h5 class="card-title">Physical</h5>
+                <p class="card-text" v-for="move in moveData" :key="move">{{ move.physical }}</p>
+              </div>
             </div>
-            <div class="card-body moves">
-              <p class="card-text">
-                {{
-                  Array.prototype.map
-                    .call(this.currentType.moves, function (moves) {
-                      return moves.name;
-                    })
-                    .join(", ")
-                }}
-              </p>
-              <p class="card-text">
-                <small class="text-muted">{{ currentType.moves.length }} moves in total</small>
-              </p>
+            <div class="card moves mt-0">
+              <div class="card-body">
+                <h5 class="card-title">Special</h5>
+                <p class="card-text" v-for="move in moveData" :key="move">{{ move.special }}</p>
+              </div>
             </div>
+            <div class="card moves mt-0">
+              <div class="card-body">
+                <h5 class="card-title">Status</h5>
+                <p class="card-text" v-for="move in moveData" :key="move">{{ move.status }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer-custom text-muted">
+            <small class="text-muted">{{ moveUrls.length }} moves in total</small>
           </div>
         </div>
       </div>
@@ -437,6 +464,18 @@ img.type-image:hover {
 .card-header-custom + .card-group > .card {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+.card-footer-custom {
+  padding: 0.75rem 1.25rem;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  font-family: "Bungee";
+}
+
+.card.moves {
+  border-bottom: none;
 }
 
 .title > img,
