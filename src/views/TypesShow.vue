@@ -240,7 +240,7 @@ export default {
       <div class="row">
         <div class="col-lg-6 mb-4 pokemon-with-type">
           <div class="card">
-            <h2 class="card-header-custom border-bottom">Pokémon with type</h2>
+            <h4 class="card-header-custom border-bottom">Pokémon with type</h4>
             <div class="card-body">
               <p class="card-text">
                 <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" />
@@ -253,7 +253,7 @@ export default {
         </div>
         <div class="col-lg-6 mb-4 damage-and-moves">
           <div class="card-header-custom">
-            <h2>Damage from</h2>
+            <h4>Damage from</h4>
           </div>
           <div class="card-group">
             <div class="card mt-0">
@@ -285,7 +285,7 @@ export default {
             </div>
           </div>
           <div class="card-header-custom">
-            <h2>Damage to</h2>
+            <h4>Damage to</h4>
           </div>
           <div class="card-group">
             <div class="card mt-0">
@@ -318,7 +318,7 @@ export default {
           </div>
           <div class="card mt-0 moves">
             <div class="card-header">
-              <h2>Moves with type</h2>
+              <h4>Moves with type</h4>
             </div>
             <div class="card-body moves">
               <p class="card-text">
@@ -430,6 +430,7 @@ img.type-image:hover {
   border-bottom: none;
   font-family: "Press Start 2P";
 }
+
 .card-header-custom + .card-group > .card {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
