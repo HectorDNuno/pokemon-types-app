@@ -38,7 +38,11 @@ export default {
       this.pokemonUrls.forEach((url) => {
         axios.get(url).then((response) => {
           let pokemonResponse = response.data;
-          this.imageUrls.push(pokemonResponse.sprites.front_default);
+          let sprites = { id: pokemonResponse.id, url: pokemonResponse.sprites.front_default };
+          this.imageUrls.push(sprites);
+          this.imageUrls.sort(function (a, b) {
+            return a.id - b.id;
+          });
         });
       });
       console.log("image url", this.imageUrls);
@@ -263,7 +267,7 @@ export default {
             <h2 class="card-header-custom border-bottom">Pokémon with type</h2>
             <div class="card-body">
               <p class="card-text">
-                <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image" />
+                <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image.url" />
               </p>
               <p class="card-text">
                 <small class="text-muted">{{ pokemonUrls.length }} pokemon in total</small>
