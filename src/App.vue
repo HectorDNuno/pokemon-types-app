@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light justify-content-between">
     <a class="navbar-brand" href="/">
       <span class="brand1">Type</span>
-      <span class="brand2">Checkr</span>
+      <span class="brand2">Dex</span>
     </a>
   </nav>
   <router-view />

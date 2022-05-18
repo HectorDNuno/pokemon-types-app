@@ -31,7 +31,7 @@ export default {
     <div class="container">
       <div class="hero">
         <img class="hero-img" src="Pokeball.png" alt="pokeball" />
-        <h1 class="hero-title">Checkr</h1>
+        <h1 class="hero-title">Dex</h1>
       </div>
       <form class="form-inline">
         <input
