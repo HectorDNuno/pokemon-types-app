@@ -39,27 +39,16 @@ export default {
       this.pokemonUrls.forEach((url) => {
         axios.get(url).then((response) => {
           let pokemonResponse = response.data;
-          let sprites = { id: pokemonResponse.id, url: pokemonResponse.sprites.front_default };
+          let sprites = { id: pokemonResponse.id, shiny: false, url: pokemonResponse.sprites.front_default };
           this.imageUrls.push(sprites);
+          // let shinySprites = { id: pokemonResponse.id, shiny: true, url: pokemonResponse.sprites.front_shiny };
+          // this.imageUrls.push(shinySprites);
           this.imageUrls.sort(function (a, b) {
             return a.id - b.id;
           });
         });
       });
       console.log("sprites", this.imageUrls);
-    },
-    getShinyPokemonImages: function () {
-      this.pokemonUrls.forEach((url) => {
-        axios.get(url).then((response) => {
-          let pokemonResponse = response.data;
-          let shinySprites = { id: pokemonResponse.id, url: pokemonResponse.sprites.front_shiny };
-          this.shinyImageUrls.push(shinySprites);
-          this.shinyImageUrls.sort(function (a, b) {
-            return a.id - b.id;
-          });
-        });
-      });
-      console.log(" shiny sprites", this.shinyImageUrls);
     },
     getMoveUrls: function () {
       this.currentType.moves.forEach((move) => {
@@ -284,7 +273,14 @@ export default {
                 Shiny Sprites
               </button>
               <p class="card-text">
-                <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image.url" />
+                <img
+                  id="sprites"
+                  class="poke-image"
+                  v-for="image in imageUrls"
+                  :key="image"
+                  :class="{ activeclass: image.shiny }"
+                  :src="image.url"
+                />
               </p>
               <p class="card-text">
                 <small class="text-muted">{{ pokemonUrls.length }} pokemon in total</small>
