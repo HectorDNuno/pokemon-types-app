@@ -29,7 +29,10 @@ export default {
 <template>
   <div class="home">
     <div class="container">
-      <h1 class="hero-title">Checkr</h1>
+      <div class="hero">
+        <img class="hero-img" src="Pokeball.png" alt="pokeball" />
+        <h1 class="hero-title">Checkr</h1>
+      </div>
       <form class="form-inline">
         <input
           class="form-control mr-sm-2"
@@ -73,6 +76,25 @@ export default {
 </template>
 
 <style>
+.hero-img {
+  width: 5rem;
+  padding-top: auto;
+  padding-bottom: 3rem;
+}
+
+.hero > img,
+.hero > h1 {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero > h1 {
+  padding-left: 2rem;
+  color: white;
+  font-family: "Press Start 2P";
+}
+
 .card-title.home {
   font-family: "Press Start 2P";
 }
