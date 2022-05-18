@@ -9,6 +9,7 @@ export default {
       allTypes: [],
       pokemonUrls: [],
       imageUrls: [],
+      shinyImageUrls: [],
       moveUrls: [],
       moveData: [],
     };
@@ -45,7 +46,20 @@ export default {
           });
         });
       });
-      console.log("image url", this.imageUrls);
+      console.log("sprites", this.imageUrls);
+    },
+    getShinyPokemonImages: function () {
+      this.pokemonUrls.forEach((url) => {
+        axios.get(url).then((response) => {
+          let pokemonResponse = response.data;
+          let shinySprites = { id: pokemonResponse.id, url: pokemonResponse.sprites.front_shiny };
+          this.shinyImageUrls.push(shinySprites);
+          this.shinyImageUrls.sort(function (a, b) {
+            return a.id - b.id;
+          });
+        });
+      });
+      console.log(" shiny sprites", this.shinyImageUrls);
     },
     getMoveUrls: function () {
       this.currentType.moves.forEach((move) => {
@@ -266,6 +280,9 @@ export default {
           <div class="card">
             <h2 class="card-header-custom border-bottom">Pokémon with type</h2>
             <div class="card-body">
+              <button type="button" class="btn btn-outline-dark" v-on:click="getShinyPokemonImages()">
+                Shiny Sprites
+              </button>
               <p class="card-text">
                 <img v-for="image in imageUrls" :key="image" class="poke-image" :src="image.url" />
               </p>
