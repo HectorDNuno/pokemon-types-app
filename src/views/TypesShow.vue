@@ -41,8 +41,6 @@ export default {
           let pokemonResponse = response.data;
           let sprites = { id: pokemonResponse.id, shiny: false, url: pokemonResponse.sprites.front_default };
           this.imageUrls.push(sprites);
-          // let shinySprites = { id: pokemonResponse.id, shiny: true, url: pokemonResponse.sprites.front_shiny };
-          // this.imageUrls.push(shinySprites);
           this.imageUrls.sort(function (a, b) {
             return a.id - b.id;
           });
@@ -269,18 +267,8 @@ export default {
           <div class="card">
             <h2 class="card-header-custom border-bottom">Pokémon with type</h2>
             <div class="card-body">
-              <button type="button" class="btn btn-outline-dark" v-on:click="getShinyPokemonImages()">
-                Shiny Sprites
-              </button>
               <p class="card-text">
-                <img
-                  id="sprites"
-                  class="poke-image"
-                  v-for="image in imageUrls"
-                  :key="image"
-                  :class="{ activeclass: image.shiny }"
-                  :src="image.url"
-                />
+                <img id="sprites" class="poke-image" v-for="image in imageUrls" :key="image" :src="image.url" />
               </p>
               <p class="card-text">
                 <small class="text-muted">{{ pokemonUrls.length }} pokemon in total</small>
