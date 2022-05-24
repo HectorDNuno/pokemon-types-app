@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import TypesShow from "../views/TypesShow.vue";
