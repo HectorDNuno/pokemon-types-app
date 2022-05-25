@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar navbar-light justify-content-between">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="/types">
       <span class="brand1">Type</span>
       <span class="brand2">Dex</span>
     </a>
