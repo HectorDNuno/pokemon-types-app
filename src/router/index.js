@@ -5,7 +5,7 @@ import TypesShow from "../views/TypesShow.vue";
 
 const routes = [
   {
-    path: "/types",
+    path: "/",
     name: "home",
     component: HomeView,
   },
