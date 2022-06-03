@@ -37,7 +37,7 @@ export default {
       });
       console.log("pokemon urls", this.pokemonUrls);
     },
-    getPokemonImages: function () {
+    getPokemonSprites: function () {
       this.pokemonUrls.forEach((url) => {
         axios.get(url).then((response) => {
           let pokemonResponse = response.data;
@@ -70,7 +70,7 @@ export default {
   },
 
   mounted: function () {
-    this.getPokemonImages();
+    this.getPokemonSprites();
     this.getMoveData();
   },
   watch: {
