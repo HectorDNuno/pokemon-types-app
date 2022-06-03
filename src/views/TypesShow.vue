@@ -16,7 +16,7 @@ export default {
     };
   },
   created: function () {
-    axios.get("/types/" + this.$route.params.name).then((response) => {
+    axios.get("http://localhost:3000/types/" + this.$route.params.name).then((response) => {
       console.log("show type", response.data);
       this.currentType = response.data;
       axios.get("/types.json").then((type) => {
