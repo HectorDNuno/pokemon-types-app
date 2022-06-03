@@ -56,6 +56,17 @@ export default {
               <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem; padding-top: 1rem" />
               <div class="card-body">
                 <h6 class="card-title home">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h6>
+                <p class="card-text">
+                  Weaknesses: {{ type.damage_relations_overview.weaknesses }}
+                  <br />
+                  Super-effective: {{ type.damage_relations_overview.strengths }}
+                  <br />
+                  Neutral damage from: {{ type.damage_relations_overview.neutral }}
+                  <br />
+                  Number of moves: {{ type.moves_with_type }}
+                  <br />
+                  Pokemon with type: {{ type.pokemon_with_type }}
+                </p>
               </div>
             </a>
           </div>
