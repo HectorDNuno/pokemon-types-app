@@ -35,6 +35,7 @@ export default {
       this.currentType.pokemon.forEach((pokemon) => {
         this.pokemonUrls.push(pokemon.pokemon.url);
       });
+      console.log("urls", this.pokemonUrls);
     },
     getPokemonImages: function () {
       this.pokemonUrls.forEach((url) => {
@@ -53,6 +54,7 @@ export default {
       this.currentType.moves.forEach((move) => {
         this.moveUrls.push(move.url);
       });
+      console.log("urls", this.moveUrls);
     },
     getMoveData: function () {
       this.moveUrls.forEach((url) => {
