@@ -9,8 +9,8 @@ export default {
       typeImage: "",
       allTypes: [],
       pokemonUrls: [],
-      imageUrls: [],
-      shinyImageUrls: [],
+      spriteUrls: [],
+      shinySpriteUrls: [],
       moveUrls: [],
       moveData: [],
     };
@@ -42,13 +42,13 @@ export default {
         axios.get(url).then((response) => {
           let pokemonResponse = response.data;
           let sprites = { id: pokemonResponse.id, shiny: false, url: pokemonResponse.sprites.front_default };
-          this.imageUrls.push(sprites);
-          this.imageUrls.sort(function (a, b) {
+          this.spriteUrls.push(sprites);
+          this.spriteUrls.sort(function (a, b) {
             return a.id - b.id;
           });
         });
       });
-      console.log("sprites", this.imageUrls);
+      console.log("sprites", this.spriteUrls);
     },
     getMoveUrls: function () {
       this.currentType.moves.forEach((move) => {
@@ -271,7 +271,7 @@ export default {
             <h2 class="card-header-custom border-bottom">Pokémon with type</h2>
             <div class="card-body">
               <p class="card-text">
-                <img id="sprites" class="poke-image" v-for="image in imageUrls" :key="image" :src="image.url" />
+                <img id="sprites" class="poke-image" v-for="image in spriteUrls" :key="image" :src="image.url" />
               </p>
               <p class="card-text">
                 <small class="text-muted">{{ pokemonUrls.length }} pokemon in total</small>
