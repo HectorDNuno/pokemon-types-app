@@ -6,7 +6,7 @@ export default {
   data: function () {
     return {
       currentType: [],
-      typeImage: "",
+      mainTypeImage: "",
       allTypes: [],
       pokemonUrls: [],
       spriteUrls: [],
@@ -17,14 +17,14 @@ export default {
   },
   created: function () {
     axios.get("/types/" + this.$route.params.name).then((response) => {
-      console.log("show type", response.data);
       this.currentType = response.data;
+      console.log("current type", this.currentType);
       axios.get("/types.json").then((type) => {
         this.allTypes = type.data;
-        console.log("all types", type.data);
-        type.data.forEach((type) => {
+        console.log("my types data", this.allTypes);
+        this.allTypes.forEach((type) => {
           if (this.currentType.name === type.name) {
-            this.typeImage = type.image_url;
+            this.mainTypeImage = type.image_url;
           }
         });
       });
@@ -261,7 +261,7 @@ export default {
       </div>
 
       <div class="title">
-        <img class="type-image" :src="typeImage" :alt="typeImage" />
+        <img class="type-image" :src="mainTypeImage" :alt="mainTypeImage" />
         <h1 class="type-name">{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
       </div>
 
