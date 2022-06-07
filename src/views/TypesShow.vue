@@ -68,15 +68,12 @@ export default {
       console.log("move data", this.moveData);
     },
   },
-
-  mounted: function () {
-    this.getPokemonSprites();
-    this.getMoveData();
-  },
   watch: {
     currentType() {
       this.getPokemonUrls();
       this.getMoveUrls();
+      this.getPokemonSprites();
+      this.getMoveData();
     },
   },
 };
