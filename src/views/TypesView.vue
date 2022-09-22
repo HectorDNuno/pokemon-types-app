@@ -269,7 +269,7 @@ img.type-image:hover {
 }
 
 .card-header {
-  font-family: "Bungee";
+  font-family: "Bungee", sans-serif;
 }
 
 .card-header-custom {
@@ -278,7 +278,7 @@ img.type-image:hover {
   background-color: #f5f5f5;
   border: 1px solid #e5e5e5;
   border-bottom: none;
-  font-family: "Bungee";
+  font-family: "Bungee", sans-serif;
 }
 
 .card-header-custom + .card-group > .card {
@@ -291,7 +291,7 @@ img.type-image:hover {
   background-color: white;
   border: 1px solid #e5e5e5;
   border-top: none;
-  font-family: "Bungee";
+  font-family: "Bungee", sans-serif;
 }
 
 .card.moves {
@@ -308,6 +308,6 @@ img.type-image:hover {
 .title > h1 {
   padding-left: 2rem;
   color: white;
-  font-family: "Press Start 2P";
+  font-family: "Bungee", sans-serif;
 }
 </style>
