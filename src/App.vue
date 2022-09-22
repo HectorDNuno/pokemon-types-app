@@ -2,7 +2,7 @@
   <nav class="navbar navbar-light justify-content-between">
     <a class="navbar-brand" href="/">
       <span class="brand1">Type</span>
-      <span class="brand2">Dex</span>
+      <span class="brand2">Checkr</span>
     </a>
   </nav>
   <router-view />
@@ -31,7 +31,7 @@ span.brand1 {
   color: white;
 }
 span.brand2 {
-  font-family: "Press Start 2P", cursive;
+  font-family: "Bungee Outline", cursive;
   padding-left: 5px;
   color: white;
 }
@@ -40,6 +40,6 @@ span.brand2 {
   background-color: #e3313f;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 </style>
