@@ -93,15 +93,15 @@ export default {
 .hero > h1 {
   padding-left: 2rem;
   color: white;
-  font-family: "Bungee Outline", cursive;
+  font-family: "Bungee Outline", sans-serif;
 }
 
 .card-title.home {
-  font-family: "Bungee";
+  font-family: "Bungee", sans-serif;
 }
 
 .hero-title {
-  font-family: "Press Start 2P", cursive;
+  font-family: "Bungee", sans-serif;
   color: white;
   font-size: 60px;
   padding-top: 15px;
@@ -118,7 +118,7 @@ img.card-img-top:hover {
 }
 
 p {
-  font-family: "Bungee";
+  font-family: "Bungee", sans-serif;
 }
 
 .form-inline {
