@@ -32,7 +32,7 @@ export default {
     <div class="container">
       <div class="hero">
         <img class="hero-img" src="Pokeball.png" alt="pokeball" />
-        <h1 class="hero-title">Dex</h1>
+        <h1 class="hero-title">Checkr</h1>
       </div>
       <form class="form-inline">
         <input
@@ -93,11 +93,11 @@ export default {
 .hero > h1 {
   padding-left: 2rem;
   color: white;
-  font-family: "Press Start 2P";
+  font-family: "Bungee Outline", cursive;
 }
 
 .card-title.home {
-  font-family: "Press Start 2P";
+  font-family: "Bungee";
 }
 
 .hero-title {
