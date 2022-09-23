@@ -22,8 +22,8 @@ export default {
       <div class="card mt-0">
         <div class="card-body">
           <h5 class="card-title">{{ columnOneTitle }}</h5>
-          <p v-for="type in columnOneData" :key="type.id" class="card-text">
-            {{ type.name }}
+          <p v-for="item in columnOneData" :key="item" class="card-text">
+            {{ item.name }}
           </p>
         </div>
       </div>
@@ -31,8 +31,8 @@ export default {
       <div class="card mt-0">
         <div class="card-body">
           <h5 class="card-title">{{ columnTwoTitle }}</h5>
-          <p v-for="type in columnTwoData" :key="type.id" class="card-text">
-            {{ type.name }}
+          <p v-for="item in columnTwoData" :key="item" class="card-text">
+            {{ item.name }}
           </p>
         </div>
       </div>
@@ -40,8 +40,8 @@ export default {
       <div class="card mt-0">
         <div class="card-body">
           <h5 class="card-title">{{ columnThreetitle }}</h5>
-          <p v-for="type in columnThreeData" :key="type.id" class="card-text">
-            {{ type.name }}
+          <p v-for="item in columnThreeData" :key="item" class="card-text">
+            {{ item.name }}
           </p>
         </div>
       </div>
