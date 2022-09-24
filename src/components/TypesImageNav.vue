@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 <template>
   <div class="img-nav">
     <table class="img-nav-table">
