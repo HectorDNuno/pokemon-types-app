@@ -10,19 +10,16 @@ export default {
 
 <template>
   <div class="types-card">
-    <div class="col-lg-6 mb-4 pokemon-with-type">
-      <div class="card">
-        <h2 class="card-header-custom border-bottom">{{ cardTitle }}</h2>
-
-        <div class="card-body">
-          <p class="card-text">
-            <img id="sprites" class="poke-image" v-for="image in spriteUrls" :key="image" :src="image.url" />
-          </p>
-
-          <p class="card-text">
-            <small class="text-muted">{{ pokemonInTotal }} pokemon in total</small>
-          </p>
-        </div>
+    <div class="card">
+      <h2 class="card-header">{{ cardTitle }}</h2>
+      <div class="card-body">
+        <h5 class="card-title">{{ pokemonInTotal }} pokemon in total</h5>
+        <p class="card-text">
+          <img id="sprites" class="poke-image" v-for="image in spriteUrls" :key="image" :src="image.url" />
+        </p>
+        <p class="card-text">
+          <small class="text-muted">{{ pokemonInTotal }} pokemon in total</small>
+        </p>
       </div>
     </div>
   </div>
@@ -30,7 +27,7 @@ export default {
 
 <style>
 .types-card {
-  margin-left: 30px;
+  font-family: "Bungee", sans-serif;
 }
 
 .poke-image {
