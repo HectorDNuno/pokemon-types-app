@@ -6,7 +6,7 @@
       <tbody>
         <tr>
           <th scope="row"></th>
-          <td class="img-nav-image-title-container">
+          <td>
             <a href="/types/show/bug">
               <img
                 class="img-nav-images"
@@ -14,7 +14,6 @@
                 alt="bug"
               />
             </a>
-            <!-- <p class="img-nav-type-name">Bug</p> -->
           </td>
           <td>
             <a href="/types/show/dark">
@@ -190,20 +189,6 @@
   border: 0px;
   width: 30rem;
 }
-
-/* .img-nav-image-title-container {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 50px;
-  height: 60px;
-  width: 110%;
-}
-
-.img-nav-type-name {
-  color: #c52836;
-  padding-top: 15px;
-} */
 
 .img-nav-images {
   margin: 10px;
