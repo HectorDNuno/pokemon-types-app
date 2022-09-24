@@ -21,8 +21,18 @@
   color: #2c3e50;
 }
 
+.navbar-home-link:link,
+:visited,
+:hover,
+:active {
+  color: black;
+  text-decoration: none;
+}
+
 .navbar-title-1 {
-  color: white;
+  color: black;
+  font-family: "Bungee";
+  margin-right: 10px;
 }
 .navbar-title-2 {
   font-family: "Bungee Outline", cursive;
