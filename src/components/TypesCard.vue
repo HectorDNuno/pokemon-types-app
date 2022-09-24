@@ -1,3 +1,4 @@
+/* eslint-disable */
 <script>
 export default {
   props: {

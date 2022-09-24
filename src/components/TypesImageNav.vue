@@ -1,4 +1,4 @@
-<script></script>
+/* eslint-disable */
 
 <template>
   <div class="img-nav">

@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <nav class="navbar">
     <a class="navbar-home-link" href="/">
