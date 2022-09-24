@@ -15,7 +15,7 @@ export default {
 <template>
   <div class="card-group-container">
     <div class="card-header">{{ cardGroupTitle }}</div>
-    <div class="card-group">
+    <div class="card-group mb-5">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">{{ columnOneTitle }}</h5>
