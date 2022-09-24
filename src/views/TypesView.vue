@@ -108,37 +108,46 @@ export default {
       <h1 class="type-name">{{ currentType.name.charAt(0).toUpperCase() + currentType.name.slice(1) }}</h1>
     </div>
 
-    <TypesCard :spriteUrls="spriteUrls" :pokemonInTotal="pokemonUrls.length" cardTitle="Pokémon With Type" />
+    <div class="container cards-container">
+      <div class="row">
+        <div class="col-6">
+          <TypesCard :spriteUrls="spriteUrls" :pokemonInTotal="pokemonUrls.length" cardTitle="Pokémon With Type" />
+        </div>
+        <div class="col-6">
+          <div class="card-group-container">
+            <TypesCardGroup
+              cardGroupTitle="Recieves Damage From"
+              columnOneTitle="Double"
+              :columnOneData="currentType.damage_relations.double_damage_from"
+              columnTwoTitle="Half"
+              :columnTwoData="currentType.damage_relations.half_damage_from"
+              columnThreetitle="No Effect"
+              :columnThreeData="currentType.damage_relations.no_damage_from"
+            />
 
-    <TypesCardGroup
-      cardGroupTitle="Recieves Damage From"
-      columnOneTitle="Double"
-      :columnOneData="currentType.damage_relations.double_damage_from"
-      columnTwoTitle="Half"
-      :columnTwoData="currentType.damage_relations.half_damage_from"
-      columnThreetitle="No Effect"
-      :columnThreeData="currentType.damage_relations.no_damage_from"
-    />
+            <TypesCardGroup
+              cardGroupTitle="Deals Damage To"
+              columnOneTitle="Double"
+              :columnOneData="currentType.damage_relations.double_damage_to"
+              columnTwoTitle="Half"
+              :columnTwoData="currentType.damage_relations.half_damage_to"
+              columnThreetitle="No Effect"
+              :columnThreeData="currentType.damage_relations.no_damage_to"
+            />
 
-    <TypesCardGroup
-      cardGroupTitle="Deals Damage To"
-      columnOneTitle="Double"
-      :columnOneData="currentType.damage_relations.double_damage_to"
-      columnTwoTitle="Half"
-      :columnTwoData="currentType.damage_relations.half_damage_to"
-      columnThreetitle="No Effect"
-      :columnThreeData="currentType.damage_relations.no_damage_to"
-    />
-
-    <TypesCardGroup
-      cardGroupTitle="Moves with type"
-      columnOneTitle="Physical"
-      :columnOneData="allPhysicalMoves"
-      columnTwoTitle="Special"
-      :columnTwoData="allSpecialMoves"
-      columnThreetitle="Status"
-      :columnThreeData="allStatusMoves"
-    />
+            <TypesCardGroup
+              cardGroupTitle="Moves with type"
+              columnOneTitle="Physical"
+              :columnOneData="allPhysicalMoves"
+              columnTwoTitle="Special"
+              :columnTwoData="allSpecialMoves"
+              columnThreetitle="Status"
+              :columnThreeData="allStatusMoves"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
