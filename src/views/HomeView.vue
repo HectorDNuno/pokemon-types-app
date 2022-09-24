@@ -1,75 +1,69 @@
 <script>
-/* eslint-disable */
 import axios from "axios";
 
 export default {
-  data: function () {
+  data() {
     return {
       types: [],
       nameFilter: "",
     };
   },
-  created: function () {
+  created() {
     axios.get("/types.json").then((response) => {
       this.types = response.data;
-      console.log("all types", response.data);
     });
   },
   methods: {
-    filterTypes: function () {
+    filterTypes() {
       return this.types.filter((type) => {
-        var lowerName = type.name.toLowerCase();
-        var lowerNameFilter = this.nameFilter.toLowerCase();
+        let lowerName = type.name.toLowerCase();
+        let lowerNameFilter = this.nameFilter.toLowerCase();
         return lowerName.includes(lowerNameFilter);
       });
+    },
+    capitalizeHeader(header) {
+      let upcaseHeader = header.charAt(0).toUpperCase() + header.slice(1);
+      return upcaseHeader;
     },
   },
 };
 </script>
 
 <template>
-  <div class="home">
-    <div class="container">
-      <div class="hero">
-        <img class="hero-img" src="Pokeball.png" alt="pokeball" />
-        <h1 class="hero-title">Checkr</h1>
-      </div>
-      <form class="form-inline">
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Search for types"
-          aria-label="Search"
-          v-model="nameFilter"
-          list="names"
-        />
+  <div class="home container">
+    <form class="form-inline">
+      <input
+        class="form-control"
+        type="search"
+        placeholder="Search for types"
+        aria-label="Search"
+        v-model="nameFilter"
+        list="names"
+      />
 
-        <datalist id="names" v-for="type in types" :key="type.id">
-          <p>{{ type.name }}</p>
-        </datalist>
-      </form>
+      <datalist id="names" v-for="type in types" :key="type.id">
+        <p>{{ type.name }}</p>
+      </datalist>
+    </form>
 
-      <div class="row justify-content-between">
-        <div v-for="type in filterTypes()" :key="type.id" class="col-12 col-sm-4">
-          <div class="card mt-5">
-            <a :href="`/types/show/${type.name}`">
-              <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem; padding-top: 1rem" />
-              <div class="card-body">
-                <h6 class="card-title home">{{ type.name.charAt(0).toUpperCase() + type.name.slice(1) }}</h6>
-                <p class="card-text">
-                  Weaknesses: {{ type.damage_relations_overview.weaknesses }}
-                  <br />
-                  Super-effective: {{ type.damage_relations_overview.strengths }}
-                  <br />
-                  Neutral damage from: {{ type.damage_relations_overview.neutral }}
-                  <br />
-                  Number of moves: {{ type.moves_with_type }}
-                  <br />
-                  Pokemon with type: {{ type.pokemon_with_type }}
-                </p>
+    <div class="row">
+      <div v-for="type in filterTypes()" :key="type.id" class="col-12 col-sm-4">
+        <div class="card mt-5">
+          <a class="card-type-link" :href="`/types/show/${type.name}`">
+            <div class="card-header border-bottom-0">{{ capitalizeHeader(type.name) }}</div>
+
+            <img class="card-img-top" :src="type.image_url" :alt="type.name" style="width: 5rem; padding-top: 1rem" />
+
+            <div class="card-body">
+              <div class="card-text">
+                <p class="card-type-info">Weaknesses: {{ type.damage_relations_overview.weaknesses }}</p>
+                <p class="card-type-info">Super-effective: {{ type.damage_relations_overview.strengths }}</p>
+                <p class="card-type-info">Neutral damage from: {{ type.damage_relations_overview.neutral }}</p>
+                <p class="card-type-info">Number of moves: {{ type.moves_with_type }}</p>
+                <p class="card-type-info">Pokemon with type: {{ type.pokemon_with_type }}</p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -77,75 +71,38 @@ export default {
 </template>
 
 <style>
-.hero-img {
-  width: 5rem;
-  padding-top: auto;
-  padding-bottom: 3rem;
+.card {
+  width: 90%;
 }
 
-.hero > img,
-.hero > h1 {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.hero > h1 {
-  padding-left: 2rem;
-  color: white;
-  font-family: "Bungee Outline", sans-serif;
-}
-
-.card-title.home {
-  font-family: "Bungee", sans-serif;
-}
-
-.hero-title {
-  font-family: "Bungee", sans-serif;
-  color: white;
-  font-size: 60px;
-  padding-top: 15px;
-}
-
-img.card-img-top:hover {
+.card-img-top:hover {
   filter: saturate(200%);
   transform: scale(1.1);
   cursor: pointer;
-}
-
-.card {
-  width: 90%;
 }
 
 p {
   font-family: "Bungee", sans-serif;
 }
 
+.card-type-info {
+  margin-bottom: 0px;
+}
+
 .form-inline {
   padding-bottom: 20px;
   padding-top: 20px;
+  width: 97%;
 }
 
 .container {
   padding-bottom: 5rem;
 }
 
-a:link {
-  color: black;
-  text-decoration: none;
-}
-
-a:visited {
-  color: black;
-  text-decoration: none;
-}
-
-a:hover {
-  color: black;
-  text-decoration: none;
-}
-
-a:active {
+.card-type-link:link,
+:visited,
+:hover,
+:active {
   color: black;
   text-decoration: none;
 }
