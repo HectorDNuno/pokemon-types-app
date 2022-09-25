@@ -1,5 +1,5 @@
-/* eslint-disable */
 <script>
+/* eslint-disable */
 import axios from "axios";
 import TypesImageNav from "@/components/TypesImageNav.vue";
 import TypesCard from "@/components/TypesCard.vue";

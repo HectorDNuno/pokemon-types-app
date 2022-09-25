@@ -1,3 +1,7 @@
+<script>
+/* eslint-disable */
+</script>
+
 <template>
   <div class="img-nav">
     <table class="img-nav-table">

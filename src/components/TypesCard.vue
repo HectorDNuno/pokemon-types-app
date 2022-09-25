@@ -1,5 +1,5 @@
-/* eslint-disable */
 <script>
+/* eslint-disable */
 export default {
   props: {
     spriteUrls: Array,
