@@ -72,6 +72,14 @@ export default {
 </template>
 
 <style>
+p {
+  font-family: "Bungee", sans-serif;
+}
+
+.container {
+  padding-bottom: 5rem;
+}
+
 .card {
   width: 90%;
 }
@@ -82,22 +90,8 @@ export default {
   cursor: pointer;
 }
 
-p {
-  font-family: "Bungee", sans-serif;
-}
-
 .card-type-info {
   margin-bottom: 0px;
-}
-
-.form-inline {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  width: 97%;
-}
-
-.container {
-  padding-bottom: 5rem;
 }
 
 .card-type-link:link,
@@ -106,5 +100,11 @@ p {
 :active {
   color: black;
   text-decoration: none;
+}
+
+.form-inline {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 97%;
 }
 </style>
