@@ -1,4 +1,6 @@
 # Pokémon-Types-App
+![project screenshot](https://github.com/HectorDNuno/pokemon-types-app/blob/main/public/project-screenshot.png?raw=true)
+
 ![license](https://img.shields.io/badge/license-GPL--3.0-orange.svg)
 
 ## Description
