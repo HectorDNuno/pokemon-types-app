@@ -122,7 +122,7 @@ export default {
               :columnOneData="currentType.damage_relations.double_damage_from"
               columnTwoTitle="Half"
               :columnTwoData="currentType.damage_relations.half_damage_from"
-              columnThreetitle="No Effect"
+              columnThreeTitle="No Effect"
               :columnThreeData="currentType.damage_relations.no_damage_from"
             />
 
@@ -132,7 +132,7 @@ export default {
               :columnOneData="currentType.damage_relations.double_damage_to"
               columnTwoTitle="Half"
               :columnTwoData="currentType.damage_relations.half_damage_to"
-              columnThreetitle="No Effect"
+              columnThreeTitle="No Effect"
               :columnThreeData="currentType.damage_relations.no_damage_to"
             />
 
@@ -142,7 +142,7 @@ export default {
               :columnOneData="allPhysicalMoves"
               columnTwoTitle="Special"
               :columnTwoData="allSpecialMoves"
-              columnThreetitle="Status"
+              columnThreeTitle="Status"
               :columnThreeData="allStatusMoves"
             />
           </div>

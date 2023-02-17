@@ -7,7 +7,7 @@ export default {
     columnOneData: Array,
     columnTwoTitle: String,
     columnTwoData: Array,
-    columnThreetitle: String,
+    columnThreeTitle: String,
     columnThreeData: Array,
   },
 };
@@ -37,7 +37,7 @@ export default {
 
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{ columnThreetitle }}</h5>
+          <h5 class="card-title">{{ columnThreeTitle }}</h5>
           <p class="card-text" v-for="item in columnThreeData" :key="item">
             {{ item.name }}
           </p>
